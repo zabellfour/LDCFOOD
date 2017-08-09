@@ -11,8 +11,8 @@ h6, .h6,
 .h {
   font-family: $headings-font-family;
   font-weight: bold;
-  margin: 0 0 0.5em;
   color: $headings-color;
+  margin: 0 0 10px 0;
 }
 
 h1, .h1 {
@@ -40,7 +40,7 @@ h6, .h6 {
 }
 
 p {
-  margin: 0 0 1em;
+  margin: 0 0 10px;
 }
 
 a {

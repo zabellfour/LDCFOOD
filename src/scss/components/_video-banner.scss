@@ -1,0 +1,24 @@
+.video-banner {
+    padding: 150px 0;
+    position: relative;
+    text-align:right;
+    z-index: 1;
+    .h2{
+    	color:$white;
+    	text-transform: uppercase;
+    	span{
+    		display: block;
+    	}
+    }
+    &:after{
+    	content: '';
+    	position: absolute;
+    	top:0;
+    	left:0;
+    	right:0;
+    	bottom:0;
+    	background-color: $gray;opacity: .65;
+    	z-index: -1;
+
+    }
+}
