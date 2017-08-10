@@ -1,13 +1,40 @@
 .video-banner {
-    padding: 150px 0;
+    padding: 95px 0 60px;
     position: relative;
     text-align:right;
     z-index: 1;
+    height: 549px;
+    display: flex;
+    align-items:center;
+    justify-content:flex-end; 
+.video-js{
+	position: absolute;
+	top: -50%;
+	left:-50%;
+	right:-50%;
+	bottom:-50%;
+	height: auto;
+	width: auto;
+
+
+}
     .h2{
     	color:$white;
     	text-transform: uppercase;
+    	margin-right: 18px;
+    	margin-top: 0px;
+    	margin-bottom: 24px;
+    	line-height: 1.1;
+    	position: relative;
+    	z-index: 99;
+    	@include media('<tablet') {
+    		margin-right: 0;	
+    	}	
     	span{
     		display: block;
+    		font-weight: 300;
+    		margin-right: 0;
+    		margin-top: 0;
     	}
     }
     &:after{
@@ -17,8 +44,15 @@
     	left:0;
     	right:0;
     	bottom:0;
-    	background-color: $gray;opacity: .65;
+    	background-color: $gray;
+    	opacity: .65;
     	z-index: -1;
 
+    }
+    .btn{
+    	margin-right: 20px;
+@include media('<tablet') {
+	margin-right: 0;	
+}	
     }
 }
