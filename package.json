@@ -62,9 +62,12 @@
     "start": "gulp"
   },
   "dependencies": {
+    "@fancyapps/fancybox": "^3.1.20",
     "include-media": "~1.4.9",
     "jquery": "~2.2.4",
     "normalize.css": "~5.0.0",
+    "owl.carousel": "^2.2.0",
+    "vide": "^0.5.1",
     "video.js": "^6.2.4",
     "videojs": "^1.0.0"
   }

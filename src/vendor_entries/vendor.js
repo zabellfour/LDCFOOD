@@ -5,4 +5,7 @@
 module.exports = [
   './node_modules/jquery/dist/jquery.js',
   './node_modules/video.js/dist/video.js',
+  './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+  './node_modules/vide/dist/jquery.vide.js',
+  './node_modules/owl.carousel/dist/owl.carousel.js'
 ];

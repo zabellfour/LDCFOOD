@@ -1,0 +1,11 @@
+.video-box {
+    width: 253px;
+    height: 260px;
+      video {
+width: 100%;
+        }
+}
+#video_target {
+   mask: url(#mask);
+  -webkit-mask: url('http://html5multimedia.com/code/ch10/text.svg'); /*Apparently, -webkit-mask *only* works w/ an included SVG (haven't been able to get it to work using an #id)*/
+}
