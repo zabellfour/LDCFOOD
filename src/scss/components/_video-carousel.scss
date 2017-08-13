@@ -1,11 +1,218 @@
 .video-box {
-    width: 253px;
-    height: 260px;
-      video {
-width: 100%;
-        }
+    width: 165px;
+    height: 143px;
+    margin: 0 auto;
+    overflow: hidden; // background-color: 	red;
+    //clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    video {
+
+
+        max-width: 100%;
+    }
+    .video-mask-image {
+        display: none;
+        opacity: 0;
+    }
+    canvas {
+        height: 100%;
+        width: 100%;
+    }
 }
-#video_target {
-   mask: url(#mask);
-  -webkit-mask: url('http://html5multimedia.com/code/ch10/text.svg'); /*Apparently, -webkit-mask *only* works w/ an included SVG (haven't been able to get it to work using an #id)*/
+
+.carusel-wrapper {
+    border-top: 6px solid #333;
+    background-image: url('../images/map.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    video {
+        opacity: 0;
+        display: none;
+    }
+    .video-carousel {
+        @include media('<1400px') {
+            padding: 0 90px;
+        }
+        @include media('<widescreen') {
+            padding: 0 80px;
+        }
+        @include media('<desktop') {
+            padding: 0 50px;
+        }
+    }
+    .popup-link {
+        @include animate(border-color);
+        display: block;
+        position: relative;
+        text-decoration: none;
+        border-top: none;
+        border-bottom: none;
+        padding: 16px 2px 14px;
+        border: 3px solid transparent;
+        @include media('<desktop') {
+            padding: 8px 3px;
+        }
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            background-color: #333;
+            top: -3px;
+            bottom: -3px;
+            display: block;
+            left: -3px;
+        }
+        &:after {
+            left: auto;
+            right: -3px;
+        }
+
+
+        &.hovered {
+            border-color: black;
+            .video-box {
+                &:after {
+                    transform: scale(.5);
+                }
+            }
+        }
+    }
+    .video-box {
+
+        position: relative;
+        margin-bottom: 20px;
+@include media('<desktop') {
+	margin-bottom: 10px;
+}
+        &:after {
+            @include animate(transform);
+            transform: scale(1);
+            opacity: 1;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: inline-block;
+            background-image: url('../images/play-btn.png');
+            background-size: cover;
+            width: 64px;
+            height: 64px;
+        }
+    }
+    .owl-nav {
+        font-size: 0px;
+        .owl-prev {
+            @include animate(transform,
+            .1s);
+            background-color: transparent;
+            position: absolute;
+            left: -90px;
+            top: 46%;
+            transform: translateY(-50%) scale(1) translate3d(0, 0, 0);
+            font-size: 0px;
+            padding: 0;
+            @include media('<1400px') {
+                left: 15px;
+            }
+            @include media('<widescreen') {
+                left: -5px;
+            }
+
+            &:hover {
+                background-color: transparent;
+                transform: translateY(-50%) scale(1.1) translate3d(0, 0, 0);
+            }
+            &:after {
+                font-family: icomoon;
+                content: "\e901";
+                font-size: 57px;
+                @include media('<widescreen') {
+                    font-size: 50px;
+                }
+                @include media('<desktop') {
+                    font-size: 40px;
+                }
+                @include media('<tablet') {
+                    font-size: 30px;
+                }
+            }
+        }
+        .owl-next {
+            @include animate(transform,
+            .1s);
+            background-color: transparent;
+            position: absolute;
+            right: 0;
+            font-size: 0px;
+            top: 46%;
+            right: -90px;
+            transform: translateY(-50%) scale(1) translate3d(0, 0, 0);
+            padding: 0;
+            @include media('<1400px') {
+                left: auto;
+                right: 15px;
+            }
+            @include media('<widescreen') {
+                left: auto;
+                right: -5px;
+            }
+
+            &:hover {
+                background-color: transparent;
+                transform: translateY(-50%) scale(1.1) translate3d(0, 0, 0);
+            }
+            &:after {
+                font-family: icomoon;
+                content: "\e905";
+                font-size: 57px;
+                @include media('<widescreen') {
+                    font-size: 50px;
+                }
+                @include media('<desktop') {
+                    font-size: 40px;
+                }
+                @include media('<tablet') {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    .descr-box {
+        font-size: 14px;
+        text-align: center;
+          @include media('<desktop') {
+               
+                font-size: 12px;
+            }
+        .country {
+            text-align: center;
+            display: block;
+            margin-bottom: 13px;
+            @include media('<desktop') {
+                margin-bottom: 8px;
+                font-size: 11px;
+            }
+            img {
+                display: block;
+                width: 38px;
+                height: 26px;
+                margin: 0 auto;
+            }
+        }
+        .name {
+            display: block;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-size: 14px;
+            @include media('<widescreen') {
+                font-size: 12px;
+            }
+        }
+        .position {
+            display: block;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+    }
 }
