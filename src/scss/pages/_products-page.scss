@@ -1,0 +1,117 @@
+$light-gray-1:	#f6f6f6;
+$light-gray-2:	#eeeeee;
+
+
+.products-page {
+	#wrapper {
+		background-color: $light-gray-1;
+	}
+	.banner {
+		margin-bottom: 180px;
+	}
+}
+
+.products-section-wrapper {
+	padding: 0 25px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 60px;
+}
+
+.filter-holder {
+	width: 250px;
+	.filter {
+		background-color: $white;
+		font-size: 15px;
+		&-top {
+			margin-bottom: 7px;
+		}
+	}
+}
+
+.products-grid-holder {
+	max-width: 850px;
+	width: 100%;
+}
+
+.products-list {
+	@extend %listreset;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.list-item {
+		@include animate(border-bottom, .5s)
+		width: 250px;
+		height: 250px;
+		padding-top: 20px;
+		background-color: $light-gray-2;
+		box-sizing: border-box; 
+		border-bottom: 11px solid $light-gray-2; 
+		margin-bottom: 42px;
+		position: relative;
+		overflow: hidden;
+		.img-holder {
+			height: 164px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 10px;
+			img {
+			display: block;
+			width: 100%;
+			height: auto;
+			}
+		}
+		.item-name {
+			@include animate(color, .5s)
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			font-size: 22px;
+			font-weight: 500;
+		}
+		.item-button {
+		@include animate(opacity, .5s)
+		display: block;
+		position: absolute;
+		opacity: 0;
+		top: -67px;
+		right: -49px;
+		width: 117px;
+		height: 117px;
+		border-radius: 50%;
+		background-color: $red;
+		color: $white;
+		&:before {
+			content: "Favoris";
+			position: absolute;
+			top: 67px;
+			left: 14px;
+			font-size: 15px;
+			}
+		&:after {
+			content: " ";
+			position: absolute;
+			background-image: url(../images/favorite-mark-stars.svg);
+			width: 24px;
+			height: 24px;
+			top: 86px;
+			left: 30px;
+			}
+			&:hover {
+				opacity: .7 !important;
+			}
+		}
+		&:hover {
+			border-bottom: 11px solid $red;
+			cursor: pointer;
+			.item-button {
+				opacity: 1;
+			}
+			.item-name {
+				color: $red;
+			}
+		}
+	}
+}
+
