@@ -7,6 +7,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    .container{
+        position: absolute;
+        left: 0;
+        right: 0;
+        &:before,&:after{display: none;}
+    }
     // .video-js {
     //     position: absolute;
     //     top: -50%;
