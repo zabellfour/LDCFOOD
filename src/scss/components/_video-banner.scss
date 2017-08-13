@@ -7,6 +7,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    .container{
+        position: absolute;
+        left: 0;
+        right: 0;
+        &:before,&:after{display: none;}
+    }
     // .video-js {
     //     position: absolute;
     //     top: -50%;
@@ -58,7 +64,7 @@
     display: none;
 }
 
-#banner-video-poopup {
+.hide-content {
     background-color: $dark;
     padding: 10px;
     .video-js {
