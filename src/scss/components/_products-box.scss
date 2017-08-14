@@ -1,0 +1,117 @@
+.products-box {
+    display: flex;
+    .box-col {
+        width: 20%;
+
+        color: $black;
+        .col-head {
+            position: relative;
+            &:hover .head-menu {
+                opacity: 1;
+                visibility: visible;
+            }
+            .opener {
+                @include animate(background-color color);
+                background-color: $gray-light;
+                padding: 5px 8px;
+                font-size: 17px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                color: $black;
+                cursor: pointer;
+                &:hover {
+                    background-color: $red;
+                    color: $white;
+                    .icon-i-specifiques:before{
+    color:$red;
+}
+                    i {
+                        background-color: $white;
+                        color: $red;
+                    }
+                }
+                strong {
+                    font-weight: 300;
+                }
+                i {
+                    @include animate(background-color color);
+                    font-size: 30px;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    color: $white;
+                    background-color: $red;
+                    display: block;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    text-align: center;
+                    line-height: 48px;
+                    margin-right: 5px;
+
+                }
+            }
+            .head-menu {
+                @extend %listreset;
+               @include animate(opacity visibility);	
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: $white;
+                color: $dark;
+                font-size: 14px;
+                font-weight: 300;
+                li {
+                    padding: 8px 15px;
+                }
+                a {
+                    color: inherit;
+                    display: block;
+                     @include animate(color font-weight);
+                    &:hover {
+                        color: $red;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+        .body-box {
+            text-align: center;
+            background-color: 	transparent;
+            padding: 33px 13px;
+            strong{
+            	display: 	block;margin-bottom: 10px;	 	
+            }
+            @include animate(background-color color);	
+            &:hover{
+            	background-color: 	$red;
+            	color:$white;
+            	i{
+            		color:$white;
+            	}
+            	.btn{
+            		opacity: 	1;
+            		visibility: 	visible;	
+            	}
+            }
+            i {
+                font-size: 90px;
+                color: $pink-light;
+                        min-height: 	110px;
+                    line-height: 110px;	
+            }
+            .btn {
+                opacity: 0;
+                visibility: hidden;
+            }
+            .title{
+            	display: 	block;
+            	font-size: 22px;	
+            	font-weight: 500;	
+            }
+        }
+    }
+}

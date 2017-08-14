@@ -24,6 +24,81 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-caille:before {
+  content: "\e906";
+}
+.icon-canard:before {
+  content: "\e907";
+}
+.icon-caneton:before {
+  content: "\e908";
+}
+.icon-chapon:before {
+  content: "\e909";
+}
+.icon-chevreau:before {
+  content: "\e90a";
+}
+.icon-dinde:before {
+  content: "\e90b";
+}
+.icon-dindon:before {
+  content: "\e90c";
+}
+.icon-i-jam:before {
+  content: "\e90d";
+}
+.icon-i-lunch:before {
+  content: "\e90e";
+}
+.icon-i-sertifications:before {
+  content: "\e90f";
+}
+.icon-i-snow:before {
+  content: "\e910";
+}
+.icon-i-specifiques:before {
+  content: "\e911";
+  color: rgb(255, 255, 255);
+}
+.icon-i-specifiques:after {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(94, 30, 34);
+}
+.icon-jeune-coq:before {
+  content: "\e913";
+}
+.icon-lapin:before {
+  content: "\e914";
+}
+.icon-oie:before {
+  content: "\e915";
+}
+.icon-pintade:before {
+  content: "\e916";
+}
+.icon-poule:before {
+  content: "\e917";
+}
+.icon-poulet:before {
+  content: "\e918";
+}
+.icon-viandes:before {
+  content: "\e919";
+}
+.icon-coq:before {
+  content: "\e91a";
+}
+.icon-nav-left:before {
+  content: "\e901";
+}
+.icon-nav-right:before {
+  content: "\e905";
+}
+.icon-world:before {
+  content: "\e902";
+}
 .icon-chevron-right:before {
   content: "\e903";
 }
@@ -38,15 +113,4 @@
 }
 .icon-arrow-left:before {
   content: "\ea40";
-}
-.icon-nav-left:before {
-  content: "\e901";
-  color: #fff;
-}
-.icon-nav-right:before {
-  content: "\e905";
-  color: #fff;
-}
-.icon-world:before {
-  content: "\e902";
 }

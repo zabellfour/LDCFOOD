@@ -7,16 +7,16 @@
     text-decoration: none;
     display: inline-block;
     color: $white;
-@include media('<desktop') {
-padding:7px 15px;
-font-size: 13px;		
-}
-@include media('<tablet') {
-	font-size: 	12px;
-	padding:6px 10px;		
-}	
+    @include media('<desktop') {
+        padding: 7px 15px;
+        font-size: 13px;
+    }
+    @include media('<tablet') {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
     &.btn-contact {
-       font-size: inherit;
+        font-size: inherit;
         padding: 8px 5px;
         background-color: $red;
         border-radius: 4px;
@@ -25,5 +25,10 @@ font-size: 13px;
         &:hover {
             background-color: $red-dark;
         }
+    }
+   &.btn-thin{
+        background-color:   transparent;
+        border: 1px solid $white;
+        color:$white;
     }
 }
