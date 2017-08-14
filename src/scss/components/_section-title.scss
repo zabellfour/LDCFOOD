@@ -1,0 +1,23 @@
+.section-title {
+	position: relative;
+	padding: 35px 15px 35px 119px;
+	margin-bottom: 22px;
+	&:before {
+		content: " ";
+		position: absolute;
+		width: 91px;
+		height: 1px;
+		left: 0;
+		top: 6px;
+		background-color: $red;
+	}
+	&:after {
+		content: " ";
+		position: absolute;
+		width: 97px;
+		height: 7px;
+		left: 91px;
+		top: 0;
+		background-color: $red;
+	}
+}
