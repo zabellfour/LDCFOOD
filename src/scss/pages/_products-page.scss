@@ -20,11 +20,60 @@ $light-gray-2:	#eeeeee;
 
 .filter-holder {
 	width: 250px;
+	color: $black;
 	.filter {
 		background-color: $white;
 		font-size: 15px;
 		&-top {
+			padding: 12px;
 			margin-bottom: 7px;
+		}
+	}
+	.filter-title {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+	}
+	.f-divider {
+		height: 1px;
+		background-color: $light-gray-2;
+	}
+	.selected-values-list {
+		@extend %listreset;
+		li {
+			a {
+				color: inherit;
+				text-decoration: none;
+				&:hover {
+					text-decoration: line-through;
+				}
+				&:before {
+					content: "X";
+					display: inline-block;
+					font-weight: 500;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+	.clear-selected {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		color: inherit;
+		text-decoration: none;
+		&:before {
+			content: 'X';
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			background-color: $black;
+			border-radius: 100%;
+			line-height: 17px;
+			font-size: 16px;
+			font-weight: 400;
+			color: $white;
+
 		}
 	}
 }
@@ -32,6 +81,16 @@ $light-gray-2:	#eeeeee;
 .products-grid-holder {
 	max-width: 850px;
 	width: 100%;
+	.section-title {
+		padding: 35px 15px 35px 119px;
+		margin-bottom: 22px;
+		h2 {
+			font-size: 47px;
+			line-height: 1;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+	}
 }
 
 .products-list {
@@ -39,6 +98,7 @@ $light-gray-2:	#eeeeee;
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	margin-bottom: 30px;
 	.list-item {
 		@include animate(border-bottom, .5s)
 		width: 250px;
@@ -50,7 +110,7 @@ $light-gray-2:	#eeeeee;
 		margin-bottom: 42px;
 		position: relative;
 		overflow: hidden;
-		.img-holder {
+		.product-link {
 			height: 164px;
 			display: flex;
 			align-items: center;
@@ -110,6 +170,54 @@ $light-gray-2:	#eeeeee;
 			}
 			.item-name {
 				color: $red;
+			}
+		}
+	}
+}
+
+.callback {
+	@include animate(opacity, .3s)
+	display: none;
+	opacity: 0;
+	max-width: 210px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	font-size: 15px;
+	color: $white;
+	&.active {
+		display: block;
+		opacity: 1;
+	}
+	.red-line {
+		background-color: $red-dark;
+		border-radius: 8px 8px 0 0;
+		text-align: center;
+		span {
+			line-height: 24px;
+		}
+	}
+	.contact-link-field {
+		padding: 4px 0;
+		background-color: $red;
+		text-align: center;
+		span {
+			display: inline-block;
+			width: 100%;
+			margin-bottom: 8px;
+		}
+		.contact-link {
+			@include animate(all, .5s)
+			display: inline-block;
+			min-width: 134px;
+			line-height: 38px;
+			border: 1px solid $white;
+			border-radius: 20px;
+			text-decoration: none;
+			&:hover {
+				background-color: $white;
+				color: $red;
+				font-weight: 500;
 			}
 		}
 	}

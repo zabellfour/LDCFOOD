@@ -16,6 +16,15 @@
 	            $('body').removeClass('menu-open');
 	        });
 
+	        $('.item-button').on("click", function() {
+	            $('.callback').addClass('active');
+	            return false;
+	        });
+
+			$('html').on("click", function() {
+		        $('.callback').removeClass('active');
+		    });
+
 	        var videos = $(".video-banner video"),
 	            fraction = 0.35;
 
@@ -118,6 +127,5 @@
 	        }
 
 	    });
-
 
 	})(jQuery);
