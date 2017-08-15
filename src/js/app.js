@@ -77,7 +77,6 @@
 
 	            nav: true,
 	            dots: false,
-	            loop:true,
 	            responsive: {
 	                0: {
 	                    items: 1,
