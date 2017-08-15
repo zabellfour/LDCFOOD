@@ -1,4 +1,4 @@
-.section-title {
+.decoration {
 	position: relative;
 	padding: 35px 15px 35px 119px;
 	margin-bottom: 22px;
@@ -10,6 +10,12 @@
 		left: 0;
 		top: 6px;
 		background-color: $red;
+		@include media('<desktop') {
+    		width: 71px;
+		}
+		@include media('<tablet') {
+    		width: 91px;
+		}
 	}
 	&:after {
 		content: " ";
@@ -19,5 +25,13 @@
 		left: 91px;
 		top: 0;
 		background-color: $red;
+		@include media('<desktop') {
+    		width: 77px;
+    		left: 71px;
+		}
+		@include media('<tablet') {
+    		width: 97px;
+    		left: 91px;
+		}
 	}
 }
