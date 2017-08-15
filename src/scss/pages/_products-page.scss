@@ -8,6 +8,15 @@ $light-gray-2:	#eeeeee;
 	}
 	.banner {
 		margin-bottom: 180px;
+		@include media('<widescreen') {
+        	margin-bottom: 100px;
+    	}
+    	@include media('<desktop') {
+        	margin-bottom: 70px;
+    	}
+    	@include media('<tablet') {
+        	margin-bottom: 30px;
+    	}
 	}
 }
 
@@ -42,11 +51,16 @@ $light-gray-2:	#eeeeee;
 .filter-holder {
 	width: 250px;
 	color: $black;
+	@include media('<widescreen') {
+    	width: 23%;
+	}
 	@include media('<tablet') {
 		@include animate(left, .3s)
         width: 100%;
-        position: relative;
+        position: fixed;
+        top: 20%;
         left: 120%;
+        z-index: 2;
     }
 	.filter {
 		background-color: $white;
@@ -67,6 +81,11 @@ $light-gray-2:	#eeeeee;
 		padding: 12px;
 		font-size: 17px;
 		text-align: center;
+		word-wrap: break-word;
+		@include media('<desktop') {
+    		font-size: 15px;
+    		padding: 10px 5px;
+		}
 	}
 	.f-divider {
 		height: 1px;
@@ -123,6 +142,9 @@ $light-gray-2:	#eeeeee;
 			.f-attribute {
 				color: inherit;
 				text-decoration: none;
+				@include media('<tablet') {
+		    		font-size: 14px;
+				}
 				&:before {
 					content: "";
 					display: inline-block;
@@ -152,14 +174,30 @@ $light-gray-2:	#eeeeee;
 .products-grid-holder {
 	max-width: 850px;
 	width: 100%;
-	.section-title {
+	@include media('<widescreen') {
+    	width: 75%;
+	}
+	@include media('<tablet') {
+    	width: 100%;
+	}
+	.h2 {
 		padding: 35px 15px 35px 119px;
 		margin-bottom: 22px;
-		.h2 {
-			font-size: 47px;
-			line-height: 1;
-			font-weight: 600;
-			margin-bottom: 0;
+		font-size: 47px;
+		line-height: 1;
+		font-weight: 600;
+		margin-bottom: 0;
+		@include media('<desktop') {
+    		padding: 20px 15px 20px 70px;
+    		font-size: 28px;
+		}
+		@include media('<tablet') {
+    		padding: 15px 15px 15px 35px;
+    		margin-bottom: 20px;
+		}
+		@include media('<phone') {
+    		padding: 15px 15px 15px 35px;
+    		font-size: 22px;
 		}
 	}
 }
@@ -172,6 +210,10 @@ $light-gray-2:	#eeeeee;
 	margin-bottom: 30px;
 	.list-item {
 		@include animate(border-bottom, .5s)
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
 		width: 250px;
 		height: 250px;
 		padding-top: 20px;
@@ -181,24 +223,40 @@ $light-gray-2:	#eeeeee;
 		margin-bottom: 42px;
 		position: relative;
 		overflow: hidden;
-		@include media('<tablet') {
-        	width: 80%;
-        	margin: 0 auto;
+		@include media('<widescreen') {
+        	width: 32%;
+        	height: 200px;
         	margin-bottom: 20px;
     	}
+    	@include media('<tablet') {
+        	width: 80%;
+        	height: 250px;
+        	margin: 0 auto;
+        	margin-bottom: 30px;
+    	}
 		.product-link {
+			width: 100%;
 			height: 164px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			margin-bottom: 10px;
+			@include media('<widescreen') {
+				height: 120px;
+	    	}
+	    	@include media('<tablet') {
+				height: 164px;
+				width: 60%;
+				margin: 0 auto;
+				margin-bottom: 20px;
+	    	}
+	    	@include media('<phone') {
+				width: 80%;
+	    	}
 			img {
 			display: block;
 			width: 100%;
 			height: auto;
-			@include media('<tablet') {
-				width: 60%;
-	    		}
 			}
 		}
 		.item-name {
@@ -208,6 +266,9 @@ $light-gray-2:	#eeeeee;
 			text-align: center;
 			font-size: 22px;
 			font-weight: 500;
+			@include media('<desktop') {
+					font-size: 18px;
+	    		}
 		}
 		.item-button {
 		@include animate(opacity, .5s)
@@ -265,6 +326,10 @@ $light-gray-2:	#eeeeee;
 	bottom: 0;
 	font-size: 15px;
 	color: $white;
+	@include media('<phone') {
+			max-width: 100%;
+    		width: 100%;
+		}
 	&.active {
 		display: block;
 		opacity: 1;
@@ -273,6 +338,9 @@ $light-gray-2:	#eeeeee;
 		background-color: $red-dark;
 		border-radius: 8px 8px 0 0;
 		text-align: center;
+		@include media('<phone') {
+    		display: none;
+		}
 		span {
 			line-height: 24px;
 		}
@@ -294,6 +362,9 @@ $light-gray-2:	#eeeeee;
 			border: 1px solid $white;
 			border-radius: 20px;
 			text-decoration: none;
+			@include media('<phone') {
+				line-height: 30px;
+			}
 			&:hover {
 				background-color: $white;
 				color: $red;
