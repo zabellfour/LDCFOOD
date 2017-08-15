@@ -10,27 +10,28 @@
                 opacity: 1;
                 visibility: visible;
             }
+            &:hover .opener {
+                    background-color: $red;
+                    color: $white;
+                    .icon-i-specifiques:before {
+                        color: $red;
+                    }
+                    i {
+                        background-color: $white;
+                        color: $red;
+                    }
+                }
             .opener {
                 @include animate(background-color color);
                 background-color: $gray-light;
-                padding: 5px 8px;
+                padding: 15px 6px 15px 26px;
                 font-size: 17px;
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
                 color: $black;
                 cursor: pointer;
-                &:hover {
-                    background-color: $red;
-                    color: $white;
-                    .icon-i-specifiques:before{
-    color:$red;
-}
-                    i {
-                        background-color: $white;
-                        color: $red;
-                    }
-                }
+                
                 strong {
                     font-weight: 300;
                 }
@@ -47,13 +48,12 @@
                     flex-shrink: 0;
                     text-align: center;
                     line-height: 48px;
-                    margin-right: 5px;
-
+                    margin-right: 8px;
                 }
             }
             .head-menu {
                 @extend %listreset;
-               @include animate(opacity visibility);	
+                @include animate(opacity visibility);
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
@@ -64,13 +64,15 @@
                 color: $dark;
                 font-size: 14px;
                 font-weight: 300;
+                background-color: 	#f6f6f6;
+                z-index: 	99;
                 li {
-                    padding: 8px 15px;
+                    padding: 9px 5px 9px 33px;
                 }
                 a {
                     color: inherit;
                     display: block;
-                     @include animate(color font-weight);
+                    @include animate(color font-weight);
                     &:hover {
                         color: $red;
                         font-weight: 700;
@@ -79,38 +81,61 @@
             }
         }
         .body-box {
+        
             text-align: center;
-            background-color: 	transparent;
-            padding: 33px 13px;
-            strong{
-            	display: 	block;margin-bottom: 10px;	 	
+            background-color: transparent;
+            padding: 40px 13px 37px;
+            position: 	relative;	
+            &:after{
+            	content: '';
+            	position: absolute;
+            	bottom:0;
+            	left:5px;
+            	right: 5px;	
+            	height: 1px;	
+            	background-color: 	#f0f0f0;
             }
-            @include animate(background-color color);	
-            &:hover{
-            	background-color: 	$red;
-            	color:$white;
-            	i{
-            		color:$white;
-            	}
-            	.btn{
-            		opacity: 	1;
-            		visibility: 	visible;	
-            	}
+            strong {
+                display: block;
+                margin-bottom: 10px;
+            }
+            @include animate(background-color color);
+            &:hover {
+                background-color: $red;
+                color: $white;
+                padding-top: 21px;	
+                padding-bottom: 60px;	
+                &:after{
+                	opacity: 0;
+                }
+                i {
+                    color: $white;
+                    font-size: 88px;	
+                }
+                .btn {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
             i {
-                font-size: 90px;
+
+                font-size: 115px;
                 color: $pink-light;
-                        min-height: 	110px;
-                    line-height: 110px;	
+                min-height: 110px;
+                line-height: 110px;
             }
             .btn {
                 opacity: 0;
                 visibility: hidden;
+                position: absolute;	
+                left:50%;
+                transform:translateX(-50%);
+                bottom:12px;
             }
-            .title{
-            	display: 	block;
-            	font-size: 22px;	
-            	font-weight: 500;	
+            .title {
+                display: block;
+                font-size: 22px;
+                font-weight: 500;
             }
         }
     }
