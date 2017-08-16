@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icons/icomoon.eot?k7pqcg');
-  src:  url('../fonts/icons/icomoon.eot?k7pqcg#iefix') format('embedded-opentype'),
-    url('../fonts/icons/icomoon.ttf?k7pqcg') format('truetype'),
-    url('../fonts/icons/icomoon.woff?k7pqcg') format('woff'),
-    url('../fonts/icons/icomoon.svg?k7pqcg#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?qdhl5t');
+  src:  url('fonts/icomoon.eot?qdhl5t#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qdhl5t') format('truetype'),
+    url('fonts/icomoon.woff?qdhl5t') format('woff'),
+    url('fonts/icomoon.svg?qdhl5t#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -63,11 +63,11 @@
 .icon-i-snow:before {
   content: "\e910";
 }
-.icon-i-specifiques:before {
+.icon-i-specifiques .path1:before {
   content: "\e911";
   color: rgb(255, 255, 255);
 }
-.icon-i-specifiques:after {
+.icon-i-specifiques .path2:before {
   content: "\e912";
   margin-left: -1em;
   color: rgb(94, 30, 34);
@@ -93,7 +93,7 @@
 .icon-viandes:before {
   content: "\e919";
 }
-.icon-coq:before {
+.icon-сoq:before {
   content: "\e91a";
 }
 .icon-nav-left:before {

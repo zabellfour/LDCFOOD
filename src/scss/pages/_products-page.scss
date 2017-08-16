@@ -43,8 +43,39 @@ $light-gray-2:	#eeeeee;
 }
 
 .m-filter-open {
+	overflow: hidden;
 	.filter-holder {
-		left: 0;
+		right: 0;
+		.m-filter-bottom {
+			display: block;
+		}
+	}
+	.mask {
+		display: block;
+	}
+	.m-filter-data {
+		display: block;
+	}
+}
+
+.m-filter-data {
+	display: none;
+	padding-left: 15px;
+	line-height: 50px;
+	font-size: 16px;
+	font-weight: 500;
+	color: $white;
+	background-color: $black
+}
+
+.m-filter-wrapper {
+	@include media('<tablet') {
+    	position: absolute;
+    	top: 50px;
+    	left: 0;
+    	right: 0;
+    	bottom: 20px;
+    	overflow-y: scroll; 
 	}
 }
 
@@ -55,20 +86,40 @@ $light-gray-2:	#eeeeee;
     	width: 23%;
 	}
 	@include media('<tablet') {
-		@include animate(left, .3s)
-        width: 100%;
+		@include animate(right, .3s)
+        width: 60%;
         position: fixed;
-        top: 20%;
-        left: 120%;
+        top: 0;
+        bottom: 0;
+        right: -60%;
         z-index: 2;
+        overflow: hidden;
+        background-color: $white;
+    }
+    @include media('<phone') {
+		@include animate(right, .3s)
+        width: 80%;
+        right: -80%;
     }
 	.filter {
 		background-color: $white;
 		font-size: 15px;
 		&-top {
 			margin-bottom: 7px;
+			@include media('<widescreen') {
+    			margin-bottom: 0;
+    			border-bottom: 1px solid $light-gray-2; 
+			}
+			@include media('<tablet') {
+				.filter-title {
+					font-weight: 500;
+				}
+			}
 		}
 		&-main {
+			@include media('<tablet') {
+				overflow: auto;
+			}
 			.filter-title {
 				font-weight: 600;
 				text-transform: uppercase;
@@ -160,7 +211,7 @@ $light-gray-2:	#eeeeee;
 				&:after {
 					content: "x";
 					position: absolute;
-					left: 4px;
+					left: 3px;
 					top: 2px;
 					font-size: 13px;
 					line-height: 1;
@@ -168,6 +219,21 @@ $light-gray-2:	#eeeeee;
 				}
 			}
 		}
+	}
+	.m-filter-bottom {
+		display: none;
+		position: absolute;
+		width: 100%;
+		padding: 15px 10px;
+		bottom: 0;
+		background-color: $white;
+		border-top: 1px solid $light-gray-2;
+
+	}
+	.btn {
+		width: 100%;
+		border-radius: 0;
+		text-align: center;
 	}
 }
 
@@ -282,6 +348,9 @@ $light-gray-2:	#eeeeee;
 		border-radius: 50%;
 		background-color: $red;
 		color: $white;
+		@include media('<desktop') {
+			opacity: .8;
+	    }
 		&:before {
 			content: "Favoris";
 			position: absolute;
@@ -354,23 +423,33 @@ $light-gray-2:	#eeeeee;
 			width: 100%;
 			margin-bottom: 8px;
 		}
-		.contact-link {
-			@include animate(all, .5s)
-			display: inline-block;
-			min-width: 134px;
-			line-height: 38px;
-			border: 1px solid $white;
-			border-radius: 20px;
-			text-decoration: none;
-			@include media('<phone') {
-				line-height: 30px;
-			}
-			&:hover {
-				background-color: $white;
-				color: $red;
-				font-weight: 500;
-			}
+	}
+	.m-close {
+		display: none;
+		@include media('<phone') {
+    		display: block;
+    		position: absolute;
+    		width: 18px;
+    		height: 18px;
+    		line-height: 20px;
+    		right: 10px;
+    		top: 10px;
+    		border-radius: 50%;
+    		color: $red;
+    		background-color: $white;
+    		text-align: center;
 		}
 	}
 }
 
+.mask {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 9999px;
+	background: rgba(0, 0, 0, .2);
+	z-index: 1;
+}

@@ -1,8 +1,8 @@
 	(($) => {
-	
+
 
 	    // When DOM is ready
-	        function iOS() {
+	    function iOS() {
 
 	        var iDevices = [
 	            'iPad Simulator',
@@ -22,22 +22,21 @@
 
 	        return false;
 	    }
-	  if (iOS()) {
-	    	$('body').addClass('ios');
+	    if (iOS()) {
+	        $('body').addClass('ios');
 
-	    
 
-	    } else{
-	    	
-	    	 console.log( $('.video-box video'));
-	    	var  el = $('.video-box video');
-	    	 for (var t = 0; t < el.length; t++) {
-	    	 	el[t].pause();
-	    	 }
+
+	    } else {
+
+	        var el = $('.video-box video');
+	        for (var t = 0; t < el.length; t++) {
+	            el[t].pause();
+	        }
 	    }
 	    $(() => {
-	    
-	    	$('.products-box .opener').on("click", function() {
+
+	        $('.products-box .opener').on("click", function() {
 	            $(this).parent().toggleClass('opened');
 	        });
 
@@ -59,9 +58,19 @@
 	            return false;
 	        });
 
+
 	        $('html').on("click", function() {
 	            $('.callback').removeClass('active');
 	        });
+
+	        $('.m-close').on("click", function() {
+	            $('.callback').removeClass('active');
+	        });
+
+	        $('body').on("click", function() {
+	            $('.callback').removeClass('active');
+	        });
+
 
 	        $('.f-attribute-list > li').on("click", function() {
 	            $(this).toggleClass('selected');
@@ -72,7 +81,15 @@
 	            $(this).toggleClass('opened');
 	            $('body').toggleClass('m-filter-open');
 	        });
+
 	        $('.m-filter-close').on("click", function() {
+	            $('.m-filter-opener').removeClass('opened');
+	            $('body').removeClass('m-filter-open');
+	        });
+
+	        var $window = $(window),
+	            $nst = $('.nst-component');
+	        $('.mask').on("click", function() {
 	            $('.m-filter-opener').removeClass('opened');
 	            $('body').removeClass('m-filter-open');
 	        });
@@ -80,6 +97,7 @@
 	        (function($) {
 	            var $window = $(window),
 	                $nst = $('.nst-component');
+
 
 	            function resize() {
 	                if ($window.width() < 768) {
