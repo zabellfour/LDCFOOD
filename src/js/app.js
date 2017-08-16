@@ -21,7 +21,11 @@
 	            return false;
 	        });
 
-			$('html').on("click", function() {
+			$('.m-close').on("click", function() {
+		        $('.callback').removeClass('active');
+		    });
+
+		    $('body').on("click", function() {
 		        $('.callback').removeClass('active');
 		    });
 

@@ -160,7 +160,7 @@ $light-gray-2:	#eeeeee;
 				&:after {
 					content: "x";
 					position: absolute;
-					left: 4px;
+					left: 3px;
 					top: 2px;
 					font-size: 13px;
 					line-height: 1;
@@ -282,6 +282,9 @@ $light-gray-2:	#eeeeee;
 		border-radius: 50%;
 		background-color: $red;
 		color: $white;
+		@include media('<desktop') {
+			opacity: .8;
+	    }
 		&:before {
 			content: "Favoris";
 			position: absolute;
@@ -370,6 +373,22 @@ $light-gray-2:	#eeeeee;
 				color: $red;
 				font-weight: 500;
 			}
+		}
+	}
+	.m-close {
+		display: none;
+		@include media('<phone') {
+    		display: block;
+    		position: absolute;
+    		width: 18px;
+    		height: 18px;
+    		line-height: 20px;
+    		right: 10px;
+    		top: 10px;
+    		border-radius: 50%;
+    		color: $red;
+    		background-color: $white;
+    		text-align: center;
 		}
 	}
 }
