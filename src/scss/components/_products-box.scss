@@ -1,18 +1,142 @@
 .products-box {
     display: flex;
-    .box-col {
-        width: 20%;
 
+
+    flex-wrap: wrap;
+    @include media('<tablet') {
+        flex-direction: column-reverse;
+    }
+    @include media('<phone') {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .opener {
+        @include animate(background-color color);
+        background-color: $gray-light;
+        padding: 15px 6px 15px 26px;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         color: $black;
+        cursor: pointer;
+        @include media('<widescreen') {
+            padding: 15px 6px 15px 6px;
+            font-size: 14px;
+            text-align: center;
+        }
+        @include media('<desktop') {
+            padding: 10px 5px 10px 15px;
+            font-size: 12px;
+        }
+        @include media('<tablet') {
+            background-color: #f5f5f5;
+            border-top: 1px solid #e6e6e6;
+            position: relative;
+            padding: 14px 5px 7px 42px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        &:before {
+            @include media('<tablet') {
+                content: '';
+                width: 10px;
+                height: 10px;
+                border: 1px solid $black;
+                border-right: none;
+                border-bottom: none;
+                transform: rotate(-135deg) translateY(50%);
+                position: absolute;
+                top: 64%;
+                left: 15px;
+                display: block;
+                margin-top: -7px;
+            }
+        }
+        strong {
+            font-weight: 300;
+            width: 100%;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            @include media('<tablet') {
+                font-weight: 700;
+            }
+        }
+        i {
+            @include animate(background-color color);
+            font-size: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            color: $white;
+            background-color: $red;
+            display: block;
+            flex-grow: 0;
+            flex-shrink: 0;
+            text-align: center;
+            line-height: 48px;
+            margin-right: 8px;
+            @include media('<desktop') {
+                width: 30px;
+                height: 30px;
+                font-size: 20px;
+                line-height: 30px;
+            }
+            @include media('<tablet') {
+                position: absolute;
+                right: 6px;
+                top: 50%;
+                width: 26px;
+                height: 26px;
+                font-size: 20px;
+                line-height: 26px;
+                background-color: transparent;
+                color: $red !important;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .opened .opener:before {
+        @include media('<tablet') {
+
+            transform: rotate(45deg) translateY(50%) !important;
+            left: 22px !important;
+        }
+    }
+    .header-row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        @include media('<tablet') {
+            flex-wrap: wrap;
+        }
         .col-head {
             position: relative;
+            width: 20%;
+            @include media('<tablet') {
+                width: 100%;
+            }
             &:hover .head-menu {
                 opacity: 1;
                 visibility: visible;
             }
-            &:hover .opener {
-                    background-color: $red;
-                    color: $white;
+            &:hover .opener,
+            {
+                background-color: $red;
+                color: $white;
+                .icon-i-specifiques:before {
+                    color: $red;
+                }
+                i {
+                    background-color: $white;
+                    color: $red;
+                }
+                @include media('<tablet') {
+                    background-color: #f5f5f5;
+                    color: $black;
                     .icon-i-specifiques:before {
                         color: $red;
                     }
@@ -21,36 +145,21 @@
                         color: $red;
                     }
                 }
-            .opener {
-                @include animate(background-color color);
-                background-color: $gray-light;
-                padding: 15px 6px 15px 26px;
-                font-size: 17px;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                color: $black;
-                cursor: pointer;
-                
-                strong {
-                    font-weight: 300;
-                }
-                i {
-                    @include animate(background-color color);
-                    font-size: 30px;
-                    width: 48px;
-                    height: 48px;
-                    border-radius: 50%;
-                    color: $white;
-                    background-color: $red;
-                    display: block;
-                    flex-grow: 0;
-                    flex-shrink: 0;
-                    text-align: center;
-                    line-height: 48px;
-                    margin-right: 8px;
+            }
+            &.opened .opener {
+                @include media('<tablet') {
+                    background-color: #f5f5f5;
+                    color: $black;
+                    .icon-i-specifiques:before {
+                        color: $red;
+                    }
+                    i {
+                        background-color: $white;
+                        color: $red;
+                    }
                 }
             }
+
             .head-menu {
                 @extend %listreset;
                 @include animate(opacity visibility);
@@ -64,10 +173,31 @@
                 color: $dark;
                 font-size: 14px;
                 font-weight: 300;
-                background-color: 	#f6f6f6;
-                z-index: 	99;
+                background-color: #f6f6f6;
+                z-index: 99;
+                @include media('<tablet') {
+                    position: static;
+                    height: 0;
+                    background-color: transparent;
+                    font-weight: 400;
+                }
                 li {
                     padding: 9px 5px 9px 33px;
+                    @include media('<tablet') {
+                        padding: 0px 5px 0px 14%;
+                        line-height: 2.65;
+                        position: relative;
+                        &:before {
+                            position: absolute;
+                            content: '';
+                            top: 50%;
+                            left: 12%;
+                            width: 5px;
+                            background-color: $black;
+                            width: 5px;
+                            height: 1px;
+                        }
+                    }
                 }
                 a {
                     color: inherit;
@@ -80,20 +210,91 @@
                 }
             }
         }
+        .opened .head-menu {
+            @include media('<tablet') {
+                height: auto;
+                transition: none;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    .box-row-wrapper {
+        overflow: hidden;
+        width: 100%;
+
+        &.opened {
+            @include media('<tablet') {
+                .box-row {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0%);
+                    position: relative;
+                    height: auto;
+                }
+            }
+        }
+        .opener {
+            display: none;
+            @include media('<tablet') {
+                display: block;
+            }
+            i {
+                @include media('<tablet') {
+                    display: none;
+                }
+            }
+        }
+    }
+    .box-row {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        @include media('<tablet') {
+            @include animate(opacity visibility transform);
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+            display: block;
+        }
+    }
+    .col-body {
+        width: 20%;
+        color: $black;
+        @include media('<tablet') {
+            width: 100%;
+        }
+
+
         .body-box {
-        
             text-align: center;
             background-color: transparent;
             padding: 40px 13px 37px;
-            position: 	relative;	
-            &:after{
-            	content: '';
-            	position: absolute;
-            	bottom:0;
-            	left:5px;
-            	right: 5px;	
-            	height: 1px;	
-            	background-color: 	#f0f0f0;
+            position: relative;
+            @include media('<desktop') {
+                padding: 5px 8px;
+            }
+            @include media('<tablet') {
+                padding: 0px 40px 0px 14%;
+                line-height: 2.65;
+                position: relative;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 5px;
+                right: 5px;
+                height: 1px;
+                background-color: #f0f0f0;
+                @include media('<tablet') {
+                    left: 12%;
+                    width: 5px;
+                    top: 50%;
+                    right: auto;
+                    background-color: $black;
+                }
             }
             strong {
                 display: block;
@@ -101,20 +302,22 @@
             }
             @include animate(background-color color);
             &:hover {
-                background-color: $red;
-                color: $white;
-                padding-top: 21px;	
-                padding-bottom: 60px;	
-                &:after{
-                	opacity: 0;
-                }
-                i {
+                @include media('>=desktop') {
+                    background-color: $red;
                     color: $white;
-                    font-size: 88px;	
-                }
-                .btn {
-                    opacity: 1;
-                    visibility: visible;
+                    padding-top: 21px;
+                    padding-bottom: 60px;
+                    &:after {
+                        opacity: 0;
+                    }
+                    i {
+                        color: $white;
+                        font-size: 88px;
+                    }
+                    .btn {
+                        opacity: 1;
+                        visibility: visible;
+                    }
                 }
             }
             i {
@@ -123,19 +326,56 @@
                 color: $pink-light;
                 min-height: 110px;
                 line-height: 110px;
+                @include media('<desktop') {
+                    font-size: 70px;
+                }
+                @include media('<tablet') {
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    font-size: 25px;
+                    transform: translateY(-50%);
+                }
             }
             .btn {
                 opacity: 0;
                 visibility: hidden;
-                position: absolute;	
-                left:50%;
-                transform:translateX(-50%);
-                bottom:12px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 12px;
+                @include media('<desktop') {
+                    opacity: 0;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    visibility: visible;
+                    transform: translateX(0);
+                    width: auto;
+                    border: none;
+                    color: transparent;
+                }
             }
             .title {
                 display: block;
                 font-size: 22px;
                 font-weight: 500;
+                width: 100%;
+                display: block;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                @include media('<desktop') {
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin-bottom: 0;
+                }
+                @include media('<tablet') {
+                    text-align: left;
+                    font-size: 15px;
+                    margin-bottom: 0;
+                    font-weight: 400;
+                }
             }
         }
     }

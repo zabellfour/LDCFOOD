@@ -1,9 +1,24 @@
+html body.ios {
+    .carusel-wrapper {
+        .video-box {
+            video {
+                display: block !important;
+                opacity: 1 !important;
+                height: 100% !important;
+            }
+        }
+        canvas {
+
+            opacity: 0;
+        }
+    }
+}
+
 .video-box {
     width: 165px;
     height: 143px;
     margin: 0 auto;
-    overflow: hidden; // background-color: 	red;
-    //clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    overflow: hidden;
     video {
 
 
@@ -17,13 +32,13 @@
         height: 100%;
         width: 100%;
     }
-    .seeThru-poster{
-    	top:-2px !important;
-    	left: -2 !important;
-    	right: -2px !important;
-    	bottom:-2px !important;
-width:auto !important;
-height: auto !important;
+    .seeThru-poster {
+        top: -2px !important;
+        left: -2 !important;
+        right: -2px !important;
+        bottom: -2px !important;
+        width: auto !important;
+        height: auto !important;
     }
 }
 
@@ -32,7 +47,7 @@ height: auto !important;
     background-image: url('../images/map.jpg');
     background-size: cover;
     background-position: 50% 50%;
-    margin-bottom: 66px;	
+    margin-bottom: 66px;
     video {
         opacity: 0;
         display: none;
@@ -80,12 +95,11 @@ height: auto !important;
 
         &.hovered {
             border-color: black;
-              background-color: rgba(51,51,51,.45);
+            background-color: rgba(51, 51, 51, .45);
             .video-box {
                 &:after {
                     transform: scale(.5);
                 }
-                
             }
         }
     }

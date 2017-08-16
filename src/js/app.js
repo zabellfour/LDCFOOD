@@ -1,8 +1,46 @@
 	(($) => {
-
+	
 
 	    // When DOM is ready
+	        function iOS() {
+
+	        var iDevices = [
+	            'iPad Simulator',
+	            'iPhone Simulator',
+	            'iPod Simulator',
+	            'iPad',
+	            'iPhone',
+	            'iPod'
+	        ];
+
+	        if (!!navigator.platform) {
+	            while (iDevices.length) {
+	                if (navigator.platform === iDevices.pop()) { return true; }
+	            }
+
+	        }
+
+	        return false;
+	    }
+	  if (iOS()) {
+	    	$('body').addClass('ios');
+
+	    
+
+	    } else{
+	    	
+	    	 console.log( $('.video-box video'));
+	    	var  el = $('.video-box video');
+	    	 for (var t = 0; t < el.length; t++) {
+	    	 	el[t].pause();
+	    	 }
+	    }
 	    $(() => {
+	    
+	    	$('.products-box .opener').on("click", function() {
+	            $(this).parent().toggleClass('opened');
+	        });
+
 	        $('.drop-opener').on("click", function() {
 	            $(this).toggleClass('opened');
 	            $('.drop').toggleClass('active');
@@ -21,11 +59,11 @@
 	            return false;
 	        });
 
-			$('html').on("click", function() {
-		        $('.callback').removeClass('active');
-		    });
+	        $('html').on("click", function() {
+	            $('.callback').removeClass('active');
+	        });
 
-		    $('.f-attribute-list > li').on("click", function() {
+	        $('.f-attribute-list > li').on("click", function() {
 	            $(this).toggleClass('selected');
 	            return false;
 	        });
@@ -39,22 +77,22 @@
 	            $('body').removeClass('m-filter-open');
 	        });
 
-			(function($) {
-			    var $window = $(window),
-			        $nst = $('.nst-component');
+	        (function($) {
+	            var $window = $(window),
+	                $nst = $('.nst-component');
 
-			    function resize() {
-			        if ($window.width() < 768) {
-			            return $nst.addClass('nst-is-collapsed');
-			        }
+	            function resize() {
+	                if ($window.width() < 768) {
+	                    return $nst.addClass('nst-is-collapsed');
+	                }
 
-			        $nst.removeClass('nst-is-collapsed');
-			    }
+	                $nst.removeClass('nst-is-collapsed');
+	            }
 
-			    $window
-			        .resize(resize)
-			        .trigger('resize');
-			})(jQuery);
+	            $window
+	                .resize(resize)
+	                .trigger('resize');
+	        })(jQuery);
 
 	        var videos = $(".video-banner video"),
 	            fraction = 0.35;
@@ -130,7 +168,7 @@
 
 	        var path = $('.video-box video');
 	        var videoBox = $('.popup-link');
-	       
+
 
 	        for (var i = 0; i < path.length; i++) {
 	            seeThru.create(path[i], {
