@@ -38,7 +38,13 @@
 	            $(this).toggleClass('opened');
 	            $('body').toggleClass('m-filter-open');
 	        });
+
 	        $('.m-filter-close').on("click", function() {
+	            $('.m-filter-opener').removeClass('opened');
+	            $('body').removeClass('m-filter-open');
+	        });
+
+	        $('.mask').on("click", function() {
 	            $('.m-filter-opener').removeClass('opened');
 	            $('body').removeClass('m-filter-open');
 	        });
