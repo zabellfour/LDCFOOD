@@ -135,7 +135,7 @@
 	        for (var i = 0; i < path.length; i++) {
 	            seeThru.create(path[i], {
 	                mask: '#video-mask-image',
-	                start: 'clicktoplay',
+	                start: 'external',
 	                'poster': true
 	            });
 	            videoBox[i].addEventListener('mouseenter', hoverInListen(i), false);
