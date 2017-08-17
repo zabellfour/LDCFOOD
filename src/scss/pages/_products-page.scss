@@ -123,13 +123,17 @@ $light-gray-2:	#eeeeee;
 			.filter-title {
 				font-weight: 600;
 				text-transform: uppercase;
+				margin-bottom: 12px;
+				@include media('<tablet') {
+				margin-bottom: 0;
+				}
 			}
 		}
 	}
 	.filter-title {
 		display: inline-block;
 		width: 100%;
-		padding: 12px;
+		padding: 5px;
 		font-size: 17px;
 		text-align: center;
 		word-wrap: break-word;
@@ -144,7 +148,7 @@ $light-gray-2:	#eeeeee;
 	}
 	.selected-attributes-list {
 		@extend %listreset;
-		padding: 12px;
+		padding: 8px 5px 5px 20px;
 		li {
 			a {
 				color: inherit;
@@ -194,11 +198,16 @@ $light-gray-2:	#eeeeee;
 				opacity: 0;
 			}
 			label {
+				display: inline-block;
+				padding: 0 5px 0 25px;
 				position: relative;
 				cursor: pointer;
 				&:before {
 				content: "";
-				display: inline-block;
+				position: absolute;
+				display: block;
+				top: 3px;
+				left: 0;
 				width: 13px;
 				height: 13px;
 				border: 1px solid #cfcfcf;
@@ -209,9 +218,10 @@ $light-gray-2:	#eeeeee;
 				&.selected {
 					&:after {
 						content: "x";
+						display: inline-block;
 						position: absolute;
-						left: 3px;
-						top: 0;
+						left: 4px;
+						top: 2px;
 						font-size: 13px;
 						line-height: 1;
 						font-weight: 500;
@@ -233,6 +243,8 @@ $light-gray-2:	#eeeeee;
 	.btn {
 		width: 100%;
 		border-radius: 0;
+		border: 0;
+    	outline: none;
 		text-align: center;
 	}
 }
@@ -240,6 +252,7 @@ $light-gray-2:	#eeeeee;
 .products-grid-holder {
 	max-width: 850px;
 	width: 100%;
+	padding: 15px 0 0 0;
 	@include media('<widescreen') {
     	width: 75%;
 	}
