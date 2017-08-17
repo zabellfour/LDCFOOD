@@ -28,7 +28,6 @@
 
 
 	    } else {
-
 	        var el = $('.video-box video');
 	        for (var t = 0; t < el.length; t++) {
 	            el[t].pause();
@@ -112,8 +111,7 @@
 	                .trigger('resize');
 	        })(jQuery);
 
-	        var videos = $(".video-banner video"),
-	            fraction = 0.35;
+
 
 	        function checkScroll() {
 	            var video = videos[0];
@@ -133,33 +131,36 @@
 	            } else {
 	                video.pause();
 	            }
-
 	        }
 
-	        if ($(window).width() > 1024) {
-	            window.addEventListener('scroll', checkScroll, false);
-	            $("[data-fancybox]").fancybox({
-	                afterShow: function() {
+	        if ($(".video-banner video").lengh) {
+	            var videos = $(".video-banner video"),
+	                fraction = 0.35;
+
+	            if ($(window).width() > 1024) {
+	                window.addEventListener('scroll', checkScroll, false);
+	                $("[data-fancybox]").fancybox({
+	                    afterShow: function() {
+	                        videos[0].pause();
+	                    },
+	                    afterClose: function() {
+	                        videos[0].play();
+	                    }
+	                });
+	            }
+
+	            $(window).resize(function() {
+	                if ($(window).width() < 1024) {
 	                    videos[0].pause();
-	                },
-	                afterClose: function() {
+	                }
+	                if ($(window).width() > 1024) {
 	                    videos[0].play();
 	                }
 	            });
-	        }
-
-	        $(window).resize(function() {
 	            if ($(window).width() < 1024) {
 	                videos[0].pause();
 	            }
-	            if ($(window).width() > 1024) {
-	                videos[0].play();
-	            }
-	        });
-	        if ($(window).width() < 1024) {
-	            videos[0].pause();
 	        }
-
 	        $('.video-carousel').owlCarousel({
 
 	            nav: true,
@@ -183,6 +184,11 @@
 	                }
 	            }
 	        });
+	        $('.text-image-carousel').owlCarousel({
+	            nav: false,
+	            items: 1
+	        });
+
 
 	        var path = $('.video-box video');
 	        var videoBox = $('.popup-link');
@@ -212,7 +218,18 @@
 	                $(this).removeClass('hovered');
 	            };
 	        }
+	    
+	        $(window).scroll(function(e) {
+	            parallaxScroll();
+	        });
+
+	        function parallaxScroll() {
+	            var scrolled = $(window).scrollTop();
+	            $('.parallax').css('top', (0 - (scrolled * 0.15	)) + 'px');
+
+	        }
 
 	    });
+
 
 	})(jQuery);

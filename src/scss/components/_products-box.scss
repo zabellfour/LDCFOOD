@@ -1,3 +1,4 @@
+
 .products-box {
     display: flex;
 
@@ -120,11 +121,12 @@
                 width: 100%;
             }
             &:hover .head-menu {
-                opacity: 1;
-                visibility: visible;
+                @include media('>tablet') {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
-            &:hover .opener,
-            {
+            &:hover .opener {
                 background-color: $red;
                 color: $white;
                 .icon-i-specifiques:before {
@@ -162,7 +164,7 @@
 
             .head-menu {
                 @extend %listreset;
-                @include animate(opacity visibility);
+          
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
@@ -175,6 +177,9 @@
                 font-weight: 300;
                 background-color: #f6f6f6;
                 z-index: 99;
+                @include media('>tablet') {
+                      @include animate(opacity visibility);
+                  }
                 @include media('<tablet') {
                     position: static;
                     height: 0;

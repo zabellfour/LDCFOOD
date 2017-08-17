@@ -1,0 +1,85 @@
+.text-image-carousel {
+    padding: 18px 41px 20px;
+    @include media('<tablet') {
+        padding: 15px 0px 20px;
+    }
+    .slide-wrapper {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        @include media('<tablet') {
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+    .img-holder {
+        width: 256px;
+        height: 256px;
+        border-radius: 50%;
+        margin-left: 44px;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+        order: 0;
+        @include media('<desktop') {
+            width: 200px;
+            height: 200px;
+            margin-left: 0;
+            margin-bottom: 15px;
+        }
+        img {
+            width: 1000px;
+            height: auto;
+            max-width: none;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            @include animate(top, .08s);
+        }
+    }
+    .owl-dots {
+        margin-top: 81px !important;
+        @include media('<desktop') {
+            margin-top: 40px !important;
+        }
+        @include media('<tablet') {
+            margin-top: 15px !important;
+        }
+        .owl-dot {
+            span {
+                width: 18px !important;
+                height: 18px !important;
+                margin: 8px 9px;
+                background-color: $black;
+            }
+            &.active span {
+                background-color: $red;
+            }
+        }
+    }
+    .text-holder {
+        text-align: right;
+        padding-bottom: 0;
+        order: 1;
+        @include media('<tablet') {
+            font-size: 16px;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        p {
+            margin-bottom: 49px;
+            @include media('<tablet') {
+                margin-bottom: 15px;
+            }
+        }
+        .btn {
+            padding: 16px 36px;
+            font-size: 18px;
+        }
+    }
+}
