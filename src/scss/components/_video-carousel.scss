@@ -47,7 +47,9 @@ html body.ios {
     background-image: url('../images/map.jpg');
     background-size: cover;
     background-position: 50% 50%;
-    margin-bottom: 66px;
+.owl-nav{
+    margin: 0;
+}
     video {
         opacity: 0;
         display: none;
