@@ -184,12 +184,11 @@
 	                }
 	            }
 	        });
-	        	        $('.text-image-carousel').owlCarousel({
-
+	        $('.text-image-carousel').owlCarousel({
 	            nav: false,
-	            items:1
-	           
+	            items: 1
 	        });
+
 
 	        var path = $('.video-box video');
 	        var videoBox = $('.popup-link');
@@ -219,7 +218,18 @@
 	                $(this).removeClass('hovered');
 	            };
 	        }
+	    
+	        $(window).scroll(function(e) {
+	            parallaxScroll();
+	        });
+
+	        function parallaxScroll() {
+	            var scrolled = $(window).scrollTop();
+	            $('.parallax').css('top', (0 - (scrolled * 0.15	)) + 'px');
+
+	        }
 
 	    });
+
 
 	})(jQuery);
