@@ -72,7 +72,7 @@
 	        });
 
 
-	        $('.f-attribute-list > li').on("click", function() {
+	        $('.f-attribute-list > li > label').on("click", function() {
 	            $(this).toggleClass('selected');
 	            return false;
 	        });

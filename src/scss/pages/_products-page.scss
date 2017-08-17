@@ -189,33 +189,33 @@ $light-gray-2:	#eeeeee;
 		padding: 0 5px 8px 23px;
 		margin-bottom: 5px;
 		li {
-			position: relative;
-			.f-attribute {
-				color: inherit;
-				text-decoration: none;
-				@include media('<tablet') {
-		    		font-size: 14px;
-				}
-				&:before {
-					content: "";
-					display: inline-block;
-					width: 13px;
-					height: 13px;
-					border: 1px solid #cfcfcf;
-					border-radius: 3px;
-					font-weight: 500;
-					margin-right: 10px;
-				}
+			.f-checkbox:not(checked) {
+				position: absolute;
+				opacity: 0;
 			}
-			&.selected {
-				&:after {
-					content: "x";
-					position: absolute;
-					left: 3px;
-					top: 2px;
-					font-size: 13px;
-					line-height: 1;
-					font-weight: 500;
+			label {
+				position: relative;
+				cursor: pointer;
+				&:before {
+				content: "";
+				display: inline-block;
+				width: 13px;
+				height: 13px;
+				border: 1px solid #cfcfcf;
+				border-radius: 3px;
+				font-weight: 500;
+				margin-right: 7px;
+				}
+				&.selected {
+					&:after {
+						content: "x";
+						position: absolute;
+						left: 3px;
+						top: 0;
+						font-size: 13px;
+						line-height: 1;
+						font-weight: 500;
+					}
 				}
 			}
 		}
