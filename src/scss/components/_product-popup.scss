@@ -1,14 +1,23 @@
 .product-popup {
 	max-width: 805px;
 	padding: 25px 25px 20px;
+	@include media('<tablet') {
+        	max-width: 600px;
+        	padding: 15px;
+    	}
 	&.hide-content {
 		background-color: $white;
 	}
 	p {
 		font-size: 16px;
 		margin-bottom: 30px;
+		@include media('<tablet') {
+			font-size: 14px;
+			margin-bottom: 20px;
+		}
 	}
 	.close-popup {
+		@include animate (opacity, .3s)
 		position: absolute;
 		width: 40px;
 		height: 40px;
@@ -20,6 +29,10 @@
     	outline: none;
     	z-index: 10;
     	cursor: pointer;
+    	@include media('<tablet') {
+    		right: 5px;
+    		top: 15px;
+    	}
 		&:before {
 			content: "x";
 			position: absolute;
@@ -27,6 +40,9 @@
 			right: 10px;
 			font-size: 40px;
 			line-height: 1;
+		}
+		&:hover {
+			opacity: .5;
 		}
 	}
 	.fancybox-close-small {
@@ -41,10 +57,16 @@
 		display: flex;
 		align-items: center;
 		font-size: 32px;
+		@include media('<tablet') {
+			font-size: 24px;
+		}
 		i {
 			color: $red;
 			font-size: 50px;
 			margin-right: 18px;
+			@include media('<tablet') {
+				font-size: 40px;
+			}
 		}
 	}
 	.popup-main {
@@ -56,6 +78,9 @@
 		font-size: 18px;
 		font-weight: 600;
 		margin-bottom: 28px;
+		@include media('<tablet') {
+			margin-bottom: 20px;
+		}
 		i {
 			color: inherit;
 			margin-right: 15px;
@@ -73,6 +98,14 @@
 		border-radius: 0;
 		line-height: 56px;
 		position: relative;
+		@include media('<tablet') {
+			width: 18%;
+			font-size: 14px;
+			line-height: 40px;
+		}
+		@include media('<phone') {
+			padding: 0 5px 0 25px;
+		}
 		&:before {
 			content: " ";
 			display: block;
@@ -84,6 +117,10 @@
 			height: 22px;
 			background-image: url(../images/favorite-mark-stars.svg);
 			background-repeat: no-repeat;
+			@include media('<tablet') {
+				width: 18px;
+				height: 18px;
+			}
 		}
 	}
 	.text-field {
@@ -93,6 +130,10 @@
 		align-items: center;
 		justify-content: flex-start;
 		background: $gray-light;
+		@include media('<tablet') {
+			font-size: 16px;
+			padding: 0 5px 0 10px;
+		}
 	}
 	.icons-field {
 		display: flex;
@@ -100,9 +141,15 @@
 		align-items: center;
 		justify-content: flex-start;
 		background: $gray-light;
+		@include media('<tablet') {
+			width: 50%;
+		}
 		i {
 			font-size: 40px;
 			margin-right: 18px;
+			@include media('<tablet') {
+				font-size: 25px;
+			}
 		}
 		.img-holder {
 			display: flex;
@@ -110,6 +157,11 @@
 			width: 45px;
 			height: 45px;
 			margin-right: 18px;
+			@include media('<tablet') {
+				width: 30px;
+				height: 30px;
+				margin-right: 12px;
+			}
 			img {
 				display: block;
 				width: 100%;
@@ -125,6 +177,9 @@
 			padding: 0 18px;
 			line-height: 40px;
 			border-radius: 5px;
+			@include media('<tablet') {
+				line-height: 30px;
+			}
 		}
 		p {
 			margin-bottom: 0;

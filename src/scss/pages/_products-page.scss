@@ -123,10 +123,6 @@ $light-gray-2:	#eeeeee;
 			.filter-title {
 				font-weight: 600;
 				text-transform: uppercase;
-				margin-bottom: 12px;
-				@include media('<tablet') {
-				margin-bottom: 0;
-				}
 			}
 		}
 	}
@@ -137,6 +133,7 @@ $light-gray-2:	#eeeeee;
 		font-size: 17px;
 		text-align: center;
 		word-wrap: break-word;
+		cursor: pointer;
 		@include media('<desktop') {
     		font-size: 15px;
     		padding: 10px 5px;
@@ -166,8 +163,9 @@ $light-gray-2:	#eeeeee;
 		}
 	}
 	.clear-selected {
-		display: inline-block;
-		width: 100%;
+		display: block;
+		max-width: 50%;
+		margin: 0 auto;
 		text-align: center;
 		color: inherit;
 		text-decoration: none;
@@ -190,7 +188,7 @@ $light-gray-2:	#eeeeee;
 	.f-attribute-list {
 		@extend %listreset;
 		color: $black;
-		padding: 0 5px 8px 23px;
+		padding: 12px 5px 8px 23px;
 		margin-bottom: 5px;
 		li {
 			.f-checkbox:not(checked) {
@@ -292,7 +290,6 @@ $light-gray-2:	#eeeeee;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-
 		width: 250px;
 		height: 250px;
 		padding-top: 20px;
@@ -307,9 +304,13 @@ $light-gray-2:	#eeeeee;
         	height: 200px;
         	margin-bottom: 20px;
     	}
+    	@include media('<desktop') {
+    		padding-top: 30px;
+			width: 48%;
+			height: 250px;
+    	}
     	@include media('<tablet') {
         	width: 80%;
-        	height: 250px;
         	margin: 0 auto;
         	margin-bottom: 30px;
     	}
@@ -323,10 +324,13 @@ $light-gray-2:	#eeeeee;
 			@include media('<widescreen') {
 				height: 120px;
 	    	}
+	    	@include media('<desktop') {
+				width: 70%;
+				margin: 0 auto;
+	    	}
 	    	@include media('<tablet') {
 				height: 164px;
 				width: 60%;
-				margin: 0 auto;
 				margin-bottom: 20px;
 	    	}
 	    	@include media('<phone') {
@@ -337,6 +341,9 @@ $light-gray-2:	#eeeeee;
 			width: 100%;
 			height: auto;
 			}
+			&:focus {
+				outline: none;
+			}
 		}
 		.item-name {
 			@include animate(color, .5s)
@@ -346,8 +353,9 @@ $light-gray-2:	#eeeeee;
 			font-size: 22px;
 			font-weight: 500;
 			@include media('<desktop') {
-					font-size: 18px;
-	    		}
+				padding-top: 15px;
+				font-size: 18px;
+	    	}
 		}
 		.item-button {
 		@include animate(opacity, .5s)
@@ -435,6 +443,14 @@ $light-gray-2:	#eeeeee;
 			display: inline-block;
 			width: 100%;
 			margin-bottom: 8px;
+		}
+		.btn {
+			@include animate(background-color color, .5s)
+			transform: translate3d(0px, 0px, 0px);
+			&:hover {
+				background-color: $white;
+				color: $red;
+			}
 		}
 	}
 	.m-close {
