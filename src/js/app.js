@@ -192,7 +192,7 @@
 	            nav: false,
 	            dots: false,
 	            items: 1,
-	
+
 	            autoplay: true,
 	            loop: true,
 	            animateOut: 'fadeOut',
@@ -211,7 +211,29 @@
 	            }
 
 	        });
-
+	        $('.logo-carousel').owlCarousel({
+	            nav: true,
+	            dots: false,
+	            items:4,
+	            loop: true,
+	            responsive: {
+	                0: {
+	                    items: 1,
+	                },
+	                480: {
+	                    items: 1
+	                },
+	                768: {
+	                    items: 2
+	                },
+	                 1024: {
+	                    items: 3
+	                },
+	                1200: {
+	                    items: 4
+	                }
+	            }
+	        });
 
 
 	        var path = $('.video-box video');

@@ -35,14 +35,25 @@ h2,
         font-size: 22px;
     }
     @include media('<phone') {
-      font-size:  20px;
+        font-size: 20px;
     }
-
 }
 
 h3,
 .h3 {
     font-size: $h3-font-size;
+
+    padding: 39px 15px 21px 83px;
+    @include media('<widescreen') {
+        padding: 30px 10px 20px 20px;
+    }
+    @include media('<desktop') {
+        padding: 15px 10px 20px 0;
+        font-size: 24px;
+    }
+    @include media('<tablet') {
+        font-size: 20px;
+    }
 }
 
 h4,
@@ -66,7 +77,7 @@ p {
 
 a {
     color: $base-link-color;
-    text-decoration:    none;
+    text-decoration: none;
     &:hover,
     &:focus {
         text-decoration: none;

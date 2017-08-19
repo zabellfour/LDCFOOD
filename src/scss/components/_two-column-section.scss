@@ -45,19 +45,7 @@
     p {
         margin-bottom: 39px;
     }
-    .h3 {
-        padding: 39px 15px 21px 83px;
-        @include media('<widescreen') {
-            padding: 30px 10px 20px 20px;
-        }
-        @include media('<desktop') {
-            padding: 15px 10px 20px 0;
-            font-size: 24px;
-        }
-        @include media('<tablet') {
-        	font-size: 20px;	
-        }	
-    }
+
     .btn {
         padding: 15px 32px;
         font-size: 19px;
@@ -66,6 +54,11 @@
             font-size: 16px;
             padding: 10px 15px;
         }
+    }
+    .h3{
+    	@include media('<desktop') {
+    		padding-left: 0;	
+    	}	
     }
 }
 
