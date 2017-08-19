@@ -237,7 +237,7 @@
 
 
 	        var path = $('.video-box video');
-	        var videoBox = $('.popup-link');
+	        var videoBox = $('.video-link');
 
 
 	        for (var i = 0; i < path.length; i++) {
