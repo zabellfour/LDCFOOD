@@ -59,6 +59,12 @@ h3,
 h4,
 .h4 {
     font-size: $h4-font-size;
+    @include media('<desktop') {
+        font-size: 20px;
+    }
+    @include media('<tablet') {
+        font-size: 17px;
+    }
 }
 
 h5,
