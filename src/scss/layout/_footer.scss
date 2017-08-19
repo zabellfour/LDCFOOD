@@ -6,8 +6,14 @@
     color: $white;
     position: relative;
     line-height: 1.2;
+    @include media('<desktop') {
+        padding-top: 80px;
+    }
+
+
     @include media('<tablet') {
-        padding-bottom: 120px;
+        padding-top: 41px;
+        padding-bottom: 58px;
     }
     .h4 {
         padding: 0;
@@ -26,7 +32,8 @@
             @include media('<tablet') {
                 width: 100%;
                 text-align: center;
-                margin-bottom: 48px;
+                margin-bottom: 43px;
+                padding-left: 0;
             }
             .logo {
                 width: 139px;
@@ -54,6 +61,7 @@
             }
             @include media('<tablet') {
                 text-align: left;
+                margin-bottom: 24px;
             }
         }
     }
@@ -78,6 +86,9 @@
             }
             @include media('<tablet') {
                 width: 100%;
+                height: 115px;
+                width: 132px;
+                margin-bottom: 15px;
             }
         }
         .video-link {
@@ -95,22 +106,44 @@
             }
             @include media('<tablet') {
                 width: 50%;
-                margin: 0 0 30px;
-                padding: 0 15px;
+                margin: 0 0 25px;
+                padding: 0 8%;
+            }
+            @include media('<640px') {
+                padding: 0 3%;
             }
             .name {
                 font-size: 14px;
                 display: block;
                 margin-bottom: 6px;
+                @include media('<tablet') {
+                    z-index: 11px;
+                    margin-bottom: 0;
+                }
             }
             .position {
                 font-style: italic;
                 margin-bottom: 9px;
                 display: inline-block;
+                @include media('<tablet') {
+                    font-size: 11px;
+                    margin-bottom: 8px;
+                }
             }
             .btn {
+                @include animate(background-color color border-color);
                 font-weight: 300;
-                padding: 8px 10px
+                padding: 8px 10px;
+                opacity: 1 !important;
+                @include media('<tablet') {
+                    padding: 8px 10px;
+                    font-size: 11px;
+                }
+                &:hover {
+                    border-color: $red;
+                    opacity: 1 !important;
+                    background-color: $red;
+                }
             }
         }
     }
@@ -145,6 +178,7 @@
         }
         @include media('<tablet') {
             flex-wrap: wrap;
+            padding-top: 14px;
         }
         address {
             font-style: normal;
@@ -156,35 +190,54 @@
             margin-bottom: 30px;
             padding-left: 23px;
             font-size: 18px;
-              line-height: 1.25;
-            @include media('<widescreen') {
-                width: 25%;
+            line-height: 1.25;
+            @include media('<tablet') {
+                order: 2;
+                padding-left: 22px;
+                padding-bottom: 14px;
             }
-            @include media('<desktop') {
+            @include media('<widescreen') {
+                width: 35%;
                 padding-right: 10px;
             }
+            @include media('<desktop') {
+                padding-right: 0;
+                padding-left: 25px;
+            }
+
             @include media('<tablet') {
                 width: 100% !important;
             }
-            &:nth-child(1) {
-              
+            &:nth-child(2) {
+                @include media('<tablet') {
+                    order: 0;
+                }
             }
-           
+
             .h4 {
 
                 margin-left: -23px !important;
                 margin-bottom: 20px;
+                @include media('<tablet') {
+                    margin-bottom: 25px;
+                }
             }
 
             &+.col {
-                width:38%;
+                width: 38%;
                 font-size: 15px;
-                p{
-                	margin-top: -6px;
-                	margin-bottom: 24px;
+                p {
+                    margin-top: -6px;
+                    margin-bottom: 24px;
+                    @include media('<tablet') {
+                    	margin-bottom: 19px;
+                    }	
                 }
                 @include media('<widescreen') {
                     width: 40%;
+                }
+                @include media('<tablet') {
+                    max-width: 350px;
                 }
                 &+.col {
                     font-size: 18px;
@@ -194,43 +247,45 @@
                     }
                 }
             }
-            .info{
-a{
-	display: block;
-}
+            .info {
+
+                a {
+                    display: block;
+                }
             }
         }
     }
 }
-.subscribe-form{
-	margin-left: 3px;
-	input{
-		line-height: 1.1;
-		font-size: 14px;
-		color: $gray-light;
-		padding-bottom: 1px;
-		background: transparent;
-		border: none;
-		border-bottom: 1px solid  rgba($white, .8) !important;
-		width: 180px;
-				padding-left: 0 !important;
-				font-size: 14px;
-		&:focus{
-			outline: none;
-		}
-	}
-	button{
-		@include animate(font-size .1s);
-		font-size: 33px;
-		line-height: 22px;
-		background: transparent;
-		border:none;
-		color:inherit;
-		vertical-align: bottom;
-		margin-left:-1px;
-display: inline-block;
-		&:hover{
-			font-size: 41px;
-		}
-	}
+
+.subscribe-form {
+    margin-left: 3px;
+    input {
+        line-height: 1.1;
+        font-size: 14px;
+        color: $gray-light;
+        padding-bottom: 1px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba($white, .8) !important;
+        width: 180px;
+        padding-left: 0 !important;
+        font-size: 14px;
+        &:focus {
+            outline: none;
+        }
+    }
+    button {
+        @include animate(font-size .1s);
+        font-size: 33px;
+        line-height: 22px;
+        background: transparent;
+        border: none;
+        color: inherit;
+        vertical-align: bottom;
+        margin-left: -1px;
+        display: inline-block;
+        &:hover {
+            font-size: 41px;
+        }
+    }
 }
