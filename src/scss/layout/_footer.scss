@@ -1,5 +1,108 @@
-#footer{
-	background-image: url('../images/footer-bg.jpg');
-	background-size: 	cover;
-	background-position: 	50% 50%;
+#footer {
+    background-image: url('../images/footer-bg.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    padding: 115px 0 40px;
+    color: $white;
+    .h4 {
+        padding: 0;
+        margin-bottom: 20px;
+
+    }
+    .top-row {
+        @extend %clearfix;
+        .logo-holder {
+            width: 18%;
+            float: left;
+        }
+        .contact-row {
+            width: 82%;
+            float: left;
+        }
+        .h4{
+        @include media('<desktop') {
+       text-align: center;
+        }}
+    }
+    .contact-links {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        @include media('<desktop') {
+        	flex-wrap:wrap;
+        }
+        .video-box {
+            margin: 0 20px 15px;
+	@include media('<desktop') {
+		margin-left: auto;
+		margin-right: auto ;
+	}
+        }
+        .video-link {
+            font-size: 14px;
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 26px;
+			@include media('<desktop') {
+				width: 30%;
+			margin:0 10% 20px;
+			}
+            .name {
+                font-size: 14px;
+                display: block;
+                margin-bottom: 10px;
+            }
+            .position {
+                margin-bottom: 10px;
+                display: inline-block;
+            }
+            .btn {
+                font-weight: 300;
+            }
+        }
+    }
+    .copy {
+        display: block;
+        font-size: 13px;
+        padding-top: 10px;
+        a {
+            color: inherit;
+            @include animate(color);
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+    .bottom-row {
+        padding-left: 18%;
+        display: flex;
+        font-size: 15px;
+        line-height: 1.1;
+        padding-top: 50px;
+        @include media('<widescreen') {
+            padding-left: 0;
+        }
+        .col {
+            width: 20%;
+            padding-right: 30px;
+            @include media('<desktop') {
+            	padding-right: 10px;
+            }
+            @include media('<widescreen') {
+                width: 25%;
+            }
+            &+.col {
+                width: 40%;
+                @include media('<widescreen') {
+                    width: 40%;
+                }
+                &+.col {
+                    width: 30%;
+                    @include media('<widescreen') {
+                        width: 33%;
+                    }
+                }
+            }
+        }
+    }
 }
