@@ -225,7 +225,7 @@
 
 	        function parallaxScroll() {
 	            var scrolled = $(window).scrollTop();
-	            $('.parallax').css('top', (0 - (scrolled * 0.15	)) + 'px');
+	            $('.parallax').css('top', (0 - (scrolled * 0.1	)) + 'px');
 
 	        }
 

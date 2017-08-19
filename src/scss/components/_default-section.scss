@@ -7,6 +7,16 @@
 	 .h2 {
         padding: 21px 15px 29px 98px;
         margin-bottom: 0;
+        @include media('<desktop') {
+            padding: 20px 10px 20px 50px;
+
+        }    
+        @include media('<tablet') {
+            padding:20px 10px 15px 20px;
+        }    
+        @include media('<phone') {
+            padding-left: 0; 
+        } 
     }
      .text-holder {
         padding-bottom: 45px;
@@ -16,5 +26,6 @@
   
     &.gray{
     	background-color: #f9f9f9;
+        padding-bottom: 20px;
     }
 }

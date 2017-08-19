@@ -8,7 +8,7 @@
     text-decoration: none;
     display: inline-block;
     color: $white;
-    &:hover{
+    &:hover {
         background-color: $red-dark;
     }
     @include media('<desktop') {
@@ -30,15 +30,24 @@
             background-color: $red-dark;
         }
     }
-   &.btn-thin{
-         @include animate(opacity);
-        background-color:   transparent;
+    &.btn-thin {
+        @include animate(opacity);
+        background-color: transparent;
         border: 1px solid $white;
-        color:$white;
-        padding:6px 28px;
-        font-size: 16px;    
-        &:hover{
-            opacity: .7 !important    ;
+        color: $white;
+        padding: 6px 28px;
+        font-size: 16px;
+        &:hover {
+            opacity: .7 !important;
         }
+    }
+    &.btn-search{
+        color: $red;
+        background-color:   transparent;
+        border:none;
+        outline: none;
+        padding: 5px 3px;
+        margin-right: 10px;
+        font-size: 25px;    
     }
 }

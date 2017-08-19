@@ -19,7 +19,7 @@ textarea {
   -webkit-border-radius: 0;
   box-sizing: border-box;
   border: 1px solid $form-element-border-color;
-  padding: $form-element-padding;
+  padding: 5px;
 
   &:focus {
     border-color: $form-element-focus-border-color;

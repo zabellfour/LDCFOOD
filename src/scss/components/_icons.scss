@@ -24,6 +24,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-search:before {
+  content: "\e91d";
+  color: #e30613;
+}
 .icon-thermometer-outlined-symbol-of-stroke:before {
   content: "\e91b";
 }
@@ -63,11 +68,11 @@
 .icon-i-snow:before {
   content: "\e910";
 }
-.icon-i-specifiques:before {
+.icon-i-specifiques .path1:before {
   content: "\e911";
   color: rgb(255, 255, 255);
 }
-.icon-i-specifiques:after {
+.icon-i-specifiques .path2:before {
   content: "\e912";
   margin-left: -1em;
   color: rgb(94, 30, 34);
@@ -110,9 +115,6 @@
 }
 .icon-chevron-left:before {
   content: "\e904";
-}
-.icon-searchmagnifying-glass:before {
-  content: "\e900";
 }
 .icon-arrow-right:before {
   content: "\ea3c";
