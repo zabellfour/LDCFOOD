@@ -188,6 +188,30 @@
 	            nav: false,
 	            items: 1
 	        });
+	        $('.single-image-carousel').owlCarousel({
+	            nav: false,
+	            dots: false,
+	            items: 1,
+	
+	            autoplay: true,
+	            loop: true,
+	            animateOut: 'fadeOut',
+	            responsive: {
+	                0: {
+	                    items: 1,
+	                },
+	                480: {
+	                    items: 2
+	                },
+
+	                768: {
+	                    items: 1
+	                }
+
+	            }
+
+	        });
+
 
 
 	        var path = $('.video-box video');
@@ -218,14 +242,14 @@
 	                $(this).removeClass('hovered');
 	            };
 	        }
-	    
+
 	        $(window).scroll(function(e) {
 	            parallaxScroll();
 	        });
 
 	        function parallaxScroll() {
 	            var scrolled = $(window).scrollTop();
-	            $('.parallax').css('top', (0 - (scrolled * 0.1	)) + 'px');
+	            $('.parallax').css('top', (0 - (scrolled * 0.1)) + 'px');
 
 	        }
 

@@ -1,0 +1,128 @@
+.two-column-section {
+    background: linear-gradient(to right, #1d1d1d 0%, #1d1d1d 50%, #d1d1d1 50%, #d1d1d1 100%);
+    color: $white;
+    font-size: 22px;
+    @include media('<widescreen') {
+        font-size: 20px;
+    }
+    @include media('<desktop') {
+        font-size: 16px;
+    }
+    @include media('<tablet') {
+        background: transparent;
+        font-size: 14px;
+    }
+    .container {
+        @extend %clearfix;
+        display: flex;
+        @include media('<tablet') {
+            flex-wrap: wrap;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .col {
+            line-height: 1.2;
+            width: 50%;
+            float: left;
+            padding: 80px 40px 65px 10px;
+            background-color: #1d1d1d;
+            @include media('<widescreen') {
+                padding: 80px 30px 40px
+            }
+            @include media('<tablet') {
+                width: 100%;
+                padding: 40px 30px;
+            }
+            &+.col {
+                background-color: #d1d1d1;
+                margin: auto 0;
+                @include media('<tablet') {
+                    padding: 30px 15px;
+                }
+            }
+        }
+    }
+    p {
+        margin-bottom: 39px;
+    }
+    .h3 {
+        padding: 39px 15px 21px 83px;
+        @include media('<widescreen') {
+            padding: 30px 10px 20px 20px;
+        }
+        @include media('<desktop') {
+            padding: 15px 10px 20px 0;
+            font-size: 24px;
+        }
+        @include media('<tablet') {
+        	font-size: 20px;	
+        }	
+    }
+    .btn {
+        padding: 15px 32px;
+        font-size: 19px;
+        font-weight: 300;
+        @include media('<tablet') {
+            font-size: 16px;
+            padding: 10px 15px;
+        }
+    }
+}
+
+.arrow-list {
+    @extend %listreset;
+    margin-bottom: 40px;
+    li {
+        position: relative;
+        padding-left: 39px;
+        padding-bottom: 11px;
+        i {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            display: inline-block;
+            width: 23px;
+            height: 23px;
+            font-size: 15px;
+            background-color: $red;
+            color: $white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include media('<desktop') {
+                width: 18px;
+                height: 18px;
+                font-size: 10px;
+            }
+            @include media('<tablet') {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.single-image-carousel {
+    .img-holder {
+        width: 80%;
+        float: right;
+        @include media('<desktop') {
+            float: none;
+            width: 100%;
+        }
+    }
+    .owl-item {
+        @include media('<desktop') {
+            text-align: center;
+        }
+        @include media('<tablet') {
+        	padding-left: 30px;	
+        	padding-right: 30px;	
+        }	
+    }
+    .owl-stage {
+        display: flex;
+        align-items: center;
+    }
+}

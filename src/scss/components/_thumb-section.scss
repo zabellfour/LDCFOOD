@@ -2,7 +2,7 @@
     background-image: url('../images/thumb-bg.jpg');
     background-size: cover;
     background-position: 50% 50%;
-    padding: 58px 0 40px;
+    padding: 58px 0 7px;
     background-attachment: fixed;
     .h2 {
         display: block;
@@ -85,7 +85,6 @@
 
 .h2.decoration-center {
     position: relative;
-
     &:after {
         content: '';
         position: absolute;
