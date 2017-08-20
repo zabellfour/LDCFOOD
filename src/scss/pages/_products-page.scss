@@ -85,6 +85,9 @@ $light-gray-2:	#eeeeee;
 	@include media('<widescreen') {
     	width: 23%;
 	}
+	@include media('<desktop') {
+    	width: 29%;
+	}
 	@include media('<tablet') {
 		@include animate(right, .3s)
         width: 60%;
@@ -134,9 +137,36 @@ $light-gray-2:	#eeeeee;
 		text-align: center;
 		word-wrap: break-word;
 		cursor: pointer;
+		position: relative;
 		@include media('<desktop') {
     		font-size: 15px;
     		padding: 10px 5px;
+		}
+		&:before {
+            @include media('<tablet') {
+                content: '';
+                width: 10px;
+                height: 10px;
+                border: 1px solid $black;
+                border-right: none;
+                border-bottom: none;
+                transform: rotate(-135deg) translateY(50%);
+                position: absolute;
+                top: 64%;
+                left: 15px;
+                display: block;
+                margin-top: -7px;
+            }
+        }
+	}
+	.nst-is-expanded {
+		.filter-title {
+			&:before {
+				@include media('<tablet') {
+	            transform: rotate(45deg) translateY(50%) !important;
+	            left: 22px !important;
+        		}
+			}
 		}
 	}
 	.f-divider {
@@ -254,6 +284,9 @@ $light-gray-2:	#eeeeee;
 	@include media('<widescreen') {
     	width: 75%;
 	}
+	@include media('<desktop') {
+    	width: 68%;
+	}
 	@include media('<tablet') {
     	width: 100%;
 	}
@@ -314,6 +347,9 @@ $light-gray-2:	#eeeeee;
         	margin: 0 auto;
         	margin-bottom: 30px;
     	}
+    	@include media('<phone') {
+        	height: 220px;
+    	}
 		.product-link {
 			width: 100%;
 			height: 164px;
@@ -329,12 +365,14 @@ $light-gray-2:	#eeeeee;
 				margin: 0 auto;
 	    	}
 	    	@include media('<tablet') {
-				height: 164px;
+				height: 140px;
 				width: 60%;
 				margin-bottom: 20px;
 	    	}
 	    	@include media('<phone') {
 				width: 80%;
+				height: 120px;
+				margin-bottom: 10px;
 	    	}
 			img {
 			display: block;
@@ -354,6 +392,10 @@ $light-gray-2:	#eeeeee;
 			font-weight: 500;
 			@include media('<desktop') {
 				padding-top: 15px;
+				font-size: 18px;
+	    	}
+	    	@include media('<phone') {
+	    		padding-top: 10px;
 				font-size: 18px;
 	    	}
 		}
