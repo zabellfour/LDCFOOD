@@ -1,4 +1,5 @@
 #header {
+    @include animate(top opacity);
     padding-top: 3px;
     background: $black;
     position: absolute;
@@ -6,7 +7,7 @@
     left: 0;
     right: 0;
     z-index: 2;
-
+    opacity: 1;
     @include media('<desktop') {
         padding-top: 13px;
     }
@@ -14,6 +15,7 @@
         height: 60px;
         background-color: $black;
         padding-top: 15px;
+        position: fixed !important;
     }
     .container {
         @include media('<phone') {
@@ -27,13 +29,13 @@
             display: flex;
         }
     }
-     @include media('<desktop') {
-            padding-top: 13px;
-        }
-        @include media('<tablet') {
-            background-color: $black;
-            padding-top: 15px;
-        }
+    @include media('<desktop') {
+        padding-top: 13px;
+    }
+    @include media('<tablet') {
+        background-color: $black;
+        padding-top: 15px;
+    }
     &.bg-transparent {
         padding-top: 39px;
         background: transparent;
@@ -69,10 +71,10 @@
         height: 143px;
         display: inline-block;
         margin-left: 50px;
-margin-top: 20px;   
-@include media('<desktop') {
-    margin-top: 0px;   
-}        
+        margin-top: 20px;
+        @include media('<desktop') {
+            margin-top: 0px;
+        }
         &:hover {
             opacity: .8;
         }
@@ -86,19 +88,19 @@ margin-top: 20px;
             margin: 0;
             vertical-align: top;
         }
-         @include media('<desktop') {
-                width: 81px;
-                height: auto;
-                margin-left: 0;
-            }
-            @include media('<tablet') {
-                position: absolute;
-                width: 30px;
+        @include media('<desktop') {
+            width: 81px;
+            height: auto;
+            margin-left: 0;
+        }
+        @include media('<tablet') {
+            position: absolute;
+            width: 30px;
 
-                top: 4px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+            top: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         img {
             width: 100%;
             height: auto;
@@ -131,6 +133,8 @@ margin-top: 20px;
             bottom: 0;
             margin-top: 0;
             padding: 34px 10px;
+            overflow: auto;
+            height: calc( 100vh - 60px);
         }
         a {
             @include animate(background-color color) opacity: 1;
@@ -146,7 +150,9 @@ margin-top: 20px;
         }
         li {
             padding: 0 13px;
-
+            &:last-child {
+                padding-bottom: 0;
+            }
             &.current-menu-item {
                 a {
                     &:after {
@@ -158,9 +164,9 @@ margin-top: 20px;
                         height: 4px;
                         background-color: $red;
                         @include media('<desktop') {
-                            left: 5px;  
-                            right: 5px; 
-                        }   
+                            left: 5px;
+                            right: 5px;
+                        }
                     }
                 }
             }
@@ -327,15 +333,31 @@ margin-top: 20px;
 .static-header {
     padding-top: 90px;
     @include media('<desktop') {
-        padding-top: 78px;  
-    }   
-@include media('<tablet') {
-    padding-top: 60px;  
-}    
+        padding-top: 78px;
+    }
+    @include media('<tablet') {
+        padding-top: 60px;
+    }
     #header {
-       background: linear-gradient(to bottom, $black 0%, $black 90px, rgba(0,0,0,0) 91px,rgba(0,0,0,0) 100%);
-       @include media('<desktop') {
- background: linear-gradient(to bottom, $black 0%, $black 78px, rgba(0,0,0,0) 79px,rgba(0,0,0,0) 100%);
-       }    
+        background: linear-gradient(to bottom, $black 0%, $black 90px, rgba(0, 0, 0, 0) 91px, rgba(0, 0, 0, 0) 100%);
+        @include media('<desktop') {
+            background: linear-gradient(to bottom, $black 0%, $black 78px, rgba(0, 0, 0, 0) 79px, rgba(0, 0, 0, 0) 100%);
+        }
+    }
+}
+
+body {
+
+    &.to-top #header {
+        @include media('<tablet') {
+            opacity: 1;
+            top: 0;
+        }
+    }
+    &.to-bottom #header {
+        @include media('<tablet') {
+            opacity: 0;
+            top: -60px;
+        }
     }
 }
