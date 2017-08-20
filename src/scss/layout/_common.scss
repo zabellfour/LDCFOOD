@@ -8,3 +8,10 @@
 	margin: 0 auto;
 	padding:0 15px;
 }
+body{
+	min-width: 320px;
+	overflow: auto;
+	@include media('<tablet') {
+       padding-top: 60px;   
+    }    
+}

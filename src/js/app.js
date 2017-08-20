@@ -214,7 +214,7 @@
 	        $('.logo-carousel').owlCarousel({
 	            nav: true,
 	            dots: false,
-	            items:4,
+	            items: 4,
 	            loop: true,
 	            responsive: {
 	                0: {
@@ -226,7 +226,7 @@
 	                768: {
 	                    items: 2
 	                },
-	                 1024: {
+	                1024: {
 	                    items: 3
 	                },
 	                1200: {
@@ -271,9 +271,18 @@
 
 	        function parallaxScroll() {
 	            var scrolled = $(window).scrollTop();
-	            $('.parallax').css('top', (0 - (scrolled * 0.1)) + 'px');
-
+	            $('.parallax').css('top', (0 - (scrolled * 0.11)) + 'px');
 	        }
+
+
+	        var markOpener = $('.mark-holder .btn');
+	        markOpener.on("click", function() {
+	            $('.deskr-wrapper').fadeOut(0);
+	            $('.mark-holder').css("margin-bottom", '0px');
+	            $(this).parent().siblings('.deskr-wrapper').fadeIn(0);
+	            var height = $(this).parent().siblings('.deskr-wrapper').innerHeight();
+	            $(this).parent().parent().css("margin-bottom", height);
+	        });
 
 	    });
 

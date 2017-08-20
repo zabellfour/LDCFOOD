@@ -1,0 +1,14 @@
+	.nos-gammes {
+	    margin-top: 20px;
+	    padding-bottom: 30px;
+	    margin-bottom: 98px;	
+@include media('<desktop') {
+	margin-top: 0;	
+	margin-bottom: 0;	
+}	
+	}
+
+	.text-holder.text-center {
+	    text-align: center;
+	    max-width: none;
+	}

@@ -1,5 +1,5 @@
 #header {
-    padding-top: 26px;
+    padding-top: 3px;
     background: $black;
     position: absolute;
     top: 0;
@@ -22,11 +22,18 @@
         }
     }
     .header-wrapper {
-    	@extend %clearfix;
-    	@include media('<tablet') {
-    		display: flex;
-    	}
+        @extend %clearfix;
+        @include media('<tablet') {
+            display: flex;
+        }
     }
+     @include media('<desktop') {
+            padding-top: 13px;
+        }
+        @include media('<tablet') {
+            background-color: $black;
+            padding-top: 15px;
+        }
     &.bg-transparent {
         padding-top: 39px;
         background: transparent;
@@ -48,7 +55,6 @@
             @include media('<tablet') {
                 position: absolute;
                 width: 30px;
-
                 top: 4px;
                 left: 50%;
                 transform: translateX(-50%);
@@ -63,7 +69,10 @@
         height: 143px;
         display: inline-block;
         margin-left: 50px;
-
+margin-top: 20px;   
+@include media('<desktop') {
+    margin-top: 0px;   
+}        
         &:hover {
             opacity: .8;
         }
@@ -77,6 +86,19 @@
             margin: 0;
             vertical-align: top;
         }
+         @include media('<desktop') {
+                width: 81px;
+                height: auto;
+                margin-left: 0;
+            }
+            @include media('<tablet') {
+                position: absolute;
+                width: 30px;
+
+                top: 4px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         img {
             width: 100%;
             height: auto;
@@ -135,6 +157,10 @@
                         right: 13px;
                         height: 4px;
                         background-color: $red;
+                        @include media('<desktop') {
+                            left: 5px;  
+                            right: 5px; 
+                        }   
                     }
                 }
             }
@@ -294,5 +320,22 @@
     font-size: 34px;
     @include media('<tablet') {
         display: block;
+    }
+}
+
+
+.static-header {
+    padding-top: 90px;
+    @include media('<desktop') {
+        padding-top: 78px;  
+    }   
+@include media('<tablet') {
+    padding-top: 60px;  
+}    
+    #header {
+       background: linear-gradient(to bottom, $black 0%, $black 90px, rgba(0,0,0,0) 91px,rgba(0,0,0,0) 100%);
+       @include media('<desktop') {
+ background: linear-gradient(to bottom, $black 0%, $black 78px, rgba(0,0,0,0) 79px,rgba(0,0,0,0) 100%);
+       }    
     }
 }

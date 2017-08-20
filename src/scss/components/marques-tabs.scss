@@ -1,0 +1,218 @@
+.marques-tabs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 0px;
+    position: relative;
+    width: 99%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 30px;    
+    &:after {
+        content: '';
+        width: 24%;
+        @include media('<desktop') {
+            width: 32%;
+        }
+        @include media('<tablet') {
+            width: 49%;
+        }
+    }
+    .img-holder {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 0;
+        max-height: 100px;
+        img {
+            max-height: 110px;
+
+            height: auto;
+            width: auto;
+            max-width: 100%;
+        }
+    }
+
+    .deskr-wrapper {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-bottom: 20px;
+        @include media('<desktop') {
+            padding-bottom: 14px;
+        }
+        .deskr-inner {
+            width: 100%;
+            background-color: #eee;
+            display: flex;
+            position: relative;
+            overflow: hidden;
+            @include media('<phone') {
+                flex-wrap: wrap;
+            }
+            .logo-holder {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20.5%;
+                padding: 10px 10px 30px 28px;
+                position: relative;
+                background-color: #ff777d;
+                @include media('<desktop') {
+                    padding: 10px;
+                    text-align: center;
+                }
+                @include media('<tablet') {
+                    width: 35%;
+                }
+                @include media('<phone') {
+                    width: 100%;
+                }
+                img {
+                    position: relative;
+                    z-index: 99;
+                    max-width: auto;
+                    max-height: 100%;
+                    width: auto;
+                    height: auto;
+                    flex-grow: 0;
+         
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    width: 33px;
+                    bottom: 0;
+                    background-image: url('../images/trinagle.png');
+                    background-size: 100% 100%;
+                    background-position: 100% center;
+                    @include media('<phone') {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .text-holder {
+            padding: 40px;
+            width: 80%;
+
+            padding: 35px 20px 35px 30px;
+            margin-left: 62px;
+            max-width: none;
+            font-size: 19px;
+            min-height: 238px;
+            @include media('<desktop') {
+                font-size: 16px;
+                padding: 20px;
+                min-height: 150px;
+            }
+            @include media('<tablet') {
+                font-size: 15px;
+                width: 65%;
+            }
+            @include media('<phone') {
+                font-size: 14px;
+                width: 100%;
+                margin: 0;
+            }
+            .text-title {
+                display: block;
+                font-size: 36px;
+                font-weight: 300;
+                color: $red;
+                text-transform: uppercase;
+                margin-bottom: 28px;
+                position: relative;
+                display: inline-block;
+                @include media('<desktop') {
+                    font-size: 28px;
+                }
+                @include media('<tablet') {
+                    font-size: 18px;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    height: 1px;
+                    background-color: currentColor;
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+    .mark-holder {
+        width: 24%;
+        @include media('<desktop') {
+            width: 32%;
+        }
+        @include media('<tablet') {
+            width: 49%;
+        }
+        @include media('<phone') {
+            width: 100%;
+        }
+    }
+    .mark-box {
+        background-color: #eeeeee;
+        padding: 23px;
+        text-align: center;
+        margin: 0 0 24px;
+        height: 236px;
+        display: flex;
+        flex-wrap: wrap;
+        @include media('<desktop') {
+            margin-bottom: 14px;
+            padding: 15px;
+            height: 220px;
+        }
+        @include media('<tablet') {
+            padding: 10px;
+            height: 200px;
+        }
+    }
+    .btn {
+        cursor: pointer;
+        width: 100%;
+        font-size: 19px;
+        font-weight: 300;
+        align-self: flex-end;
+        @include media('>=desktop') {
+            padding-top: 12px;
+
+            padding-bottom: 12px;
+        }
+    }
+}
+
+.mark-red {
+    color: $red;
+}
+
+.marques-section {
+    .text-holder {
+        @include media('>desktop') {
+
+            padding: 0 40px;
+            p {
+                margin-bottom: 24px;
+            }
+        }
+    }
+    @include media('>desktop') {
+
+        padding-top: 63px;
+    }
+    &+.default-section {
+        @include media('>desktop') {
+            padding-top: 96px;
+            .h2 {
+                margin-left: 26px;
+                margin-bottom: 44px;
+            }
+        }
+    }
+}

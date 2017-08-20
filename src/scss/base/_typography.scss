@@ -28,6 +28,7 @@ h1,
 h2,
 .h2 {
     font-size: $h2-font-size;
+    text-transform: uppercase;
     @include media('<desktop') {
         font-size: 28px;
     }
