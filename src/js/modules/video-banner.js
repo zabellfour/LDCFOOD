@@ -1,53 +1,32 @@
 var videoBanner = function() {
+    setTimeout(function() {
+        if ($('.video-banner').length) {
+            if ($(window).width() > 1024) {
+                console.log(">1024");
+                $(window).scroll(function() {
+                    $('.video-banner video').each(function() {
+                        if ($(this).is(":in-viewport(150)")) {
+                            $(this)[0].play();
+                        } else {
+                            $(this)[0].pause();
+                        }
+                    });
+                });
+            } else {
+                $('.video-banner video').each(function() {
+                    console.log("<1024");
+                    $(this)[0].pause();
+                });
+            }
+        }
+        $(window).resize(function() {
+            if ($(window).width() < 1024) {
+                $('.video-banner video')[0].pause();
+            }
+        });
+    }, 500);
 
-       function checkScroll() {
-	            var video = videos[0];
-	            var x = video.offsetLeft,
-	                y = video.offsetTop,
-	                w = video.offsetWidth,
-	                h = video.offsetHeight,
-	                r = x + w, //right
-	                b = y + h, //bottom
-	                visibleX, visibleY, visible;
 
-	            visibleX = Math.max(0, Math.min(w, window.pageXOffset + window.innerWidth - x, r - window.pageXOffset));
-	            visibleY = Math.max(0, Math.min(h, window.pageYOffset + window.innerHeight - y, b - window.pageYOffset));
-	            visible = visibleX * visibleY / (w * h);
-	            if (visible > fraction) {
-	                video.play();
-	            } else {
-	                video.pause();
-	            }
-	        }
-
-	        if ($(".video-banner video").lengh) {
-	            var videos = $(".video-banner video"),
-	                fraction = 0.35;
-
-	            if ($(window).width() > 1024) {
-	                window.addEventListener('scroll', checkScroll, false);
-	                $("[data-fancybox]").fancybox({
-	                    afterShow: function() {
-	                        videos[0].pause();
-	                    },
-	                    afterClose: function() {
-	                        videos[0].play();
-	                    }
-	                });
-	            }
-
-	            $(window).resize(function() {
-	                if ($(window).width() < 1024) {
-	                    videos[0].pause();
-	                }
-	                if ($(window).width() > 1024) {
-	                    videos[0].play();
-	                }
-	            });
-	            if ($(window).width() < 1024) {
-	                videos[0].pause();
-	            }
-	        }
 
 };
 export default videoBanner;

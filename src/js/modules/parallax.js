@@ -1,5 +1,6 @@
 var parallax = function() {
 
+
     $(window).scroll(function(e) {
         parallaxScroll();
     });
