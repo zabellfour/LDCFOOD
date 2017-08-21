@@ -9,5 +9,6 @@ module.exports = [
   './node_modules/vide/dist/jquery.vide.js',
   './node_modules/owl.carousel/dist/owl.carousel.js',
   './node_modules/seethru/dist/seeThru.min.js',
-  './node_modules/native-slide-toggle/src/nst.js'
+  './node_modules/native-slide-toggle/src/nst.js',
+  './node_modules/is-in-viewport/lib/isInViewport.js'
 ];

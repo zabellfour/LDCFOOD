@@ -6,14 +6,14 @@ import owlSlide from './modules/sliders';
 import parallax from './modules/parallax';
 
 (($) => {
-
+  
     iosDetect();
     menus();
-    videoBanner();
+
     videoBox();
     owlSlide();
     parallax();
-
+  videoBanner();
     $('.item-button').on("click", function() {
         $('.callback').addClass('active');
         return false;
@@ -63,6 +63,7 @@ import parallax from './modules/parallax';
             .resize(resize)
             .trigger('resize');
     })(jQuery);
+
 
 
 })(jQuery);
