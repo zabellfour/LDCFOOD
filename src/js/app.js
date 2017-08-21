@@ -6,14 +6,14 @@ import owlSlide from './modules/sliders';
 import parallax from './modules/parallax';
 
 (($) => {
-  
+
     iosDetect();
     menus();
 
     videoBox();
     owlSlide();
     parallax();
-  videoBanner();
+    videoBanner();
     $('.item-button').on("click", function() {
         $('.callback').addClass('active');
         return false;
