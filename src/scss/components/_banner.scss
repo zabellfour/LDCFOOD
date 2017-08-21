@@ -1,11 +1,27 @@
-
-
 .banner {
     display: flex;
     align-items: center;
     text-align: right;
     height: 278px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &:after {
+    	content: "";
+    	position: absolute;
+    	background-color: rgba(0, 0, 0, 0.3);
+    	top: 0;
+    	left: 0;
+    	bottom: 0;
+    	right: 0;
+    }
     h1 {
         color: $white;
+        position: relative;
+        z-index: 2;
+        @include media('<tablet') {
+			font-size: 32px;
+	    }
     } 
 }

@@ -2,7 +2,7 @@ $light-gray-1:	#f6f6f6;
 $light-gray-2:	#eeeeee;
 
 
-.products-page {
+.static-header {
 	#wrapper {
 		background-color: $light-gray-1;
 	}
@@ -25,6 +25,9 @@ $light-gray-2:	#eeeeee;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 60px;
+	@include media('<desktop') {
+        padding: 0;
+    }
 	@include media('<tablet') {
         flex-wrap: wrap;
     }
@@ -194,7 +197,7 @@ $light-gray-2:	#eeeeee;
 	}
 	.clear-selected {
 		display: block;
-		max-width: 50%;
+		max-width: 60%;
 		margin: 0 auto;
 		text-align: center;
 		color: inherit;
@@ -224,6 +227,7 @@ $light-gray-2:	#eeeeee;
 			.f-checkbox:not(checked) {
 				position: absolute;
 				opacity: 0;
+				z-index: -1;
 			}
 			label {
 				display: inline-block;
@@ -248,12 +252,18 @@ $light-gray-2:	#eeeeee;
 						content: "x";
 						display: inline-block;
 						position: absolute;
-						left: 4px;
+						left: 3px;
 						top: 2px;
 						font-size: 13px;
 						line-height: 1;
 						font-weight: 500;
+						@include media('<phone') {
+							left: 3.5px;
+						}
 					}
+				}
+				&:hover {
+					font-weight: 500; 
 				}
 			}
 		}
@@ -324,7 +334,7 @@ $light-gray-2:	#eeeeee;
 		justify-content: space-between;
 		flex-wrap: wrap;
 		width: 250px;
-		height: 250px;
+		min-height: 250px;
 		padding-top: 20px;
 		background-color: $light-gray-2;
 		box-sizing: border-box; 
@@ -334,13 +344,13 @@ $light-gray-2:	#eeeeee;
 		overflow: hidden;
 		@include media('<widescreen') {
         	width: 32%;
-        	height: 200px;
+        	min-height: 200px;
         	margin-bottom: 20px;
     	}
     	@include media('<desktop') {
     		padding-top: 30px;
 			width: 48%;
-			height: 250px;
+			min-height: 250px;
     	}
     	@include media('<tablet') {
         	width: 80%;
@@ -348,7 +358,7 @@ $light-gray-2:	#eeeeee;
         	margin-bottom: 30px;
     	}
     	@include media('<phone') {
-        	height: 220px;
+        	min-height: 220px;
     	}
 		.product-link {
 			width: 100%;
@@ -386,10 +396,12 @@ $light-gray-2:	#eeeeee;
 		.item-name {
 			@include animate(color, .5s)
 			display: inline-block;
+			padding: 0 10px;
 			width: 100%;
 			text-align: center;
 			font-size: 22px;
 			font-weight: 500;
+			word-wrap: break-word;
 			@include media('<desktop') {
 				padding-top: 15px;
 				font-size: 18px;

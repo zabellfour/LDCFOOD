@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body class="static-header products-page">
+<body class="static-header">
     <div id="wrapper">
         <header id="header">
             <div class="container">
@@ -36,9 +36,8 @@
                     </div>
                     <ul class="header-nav">
                         <li class="menu-close">&times;</li>
-                        <!--  <li class="current-menu-item"><a href="#">Nos Marques</a></li> -->
                         <li><a href="#">Nos Marques</a></li>
-                        <li><a href="#">Nos Gammes</a></li>
+                        <li class="current-menu-item"><a href="#">Nos Gammes</a></li>
                         <li><a href="#">Estampille CE</a></li>
                         <li><a href="#">Nos Engagements</a></li>
                         <li><a href="#" class="btn btn-contact">Contact</a></li>
@@ -57,29 +56,29 @@
                     <div class="products-section-wrapper">
                         <span class="m-filter-opener">FILTER</span>
                         <div class="filter-holder">
-                            <div class="m-filter-data">Filter</div>
-                            <div class="m-filter-wrapper">
-                                <div class="filter filter-top">
-                                    <div class="nst-component">
-                                        <span class="filter-title nst-toggle">Mes filtres</span>
-                                        <div class="nst-content">
-                                            <div>
-                                                <div class="f-divider"></div>
-                                                <ul class="selected-attributes-list">
-                                                    <li><a href="#">Poulet</a></li>
-                                                    <li><a href="#">Dinde</a></li>
-                                                </ul> 
-                                                <a href="#" class="clear-selected">Tout supprimer</a>
+                            <form action="#">
+                                <div class="m-filter-data">Filter</div>
+                                <div class="m-filter-wrapper">
+                                    <div class="filter filter-top">
+                                        <div class="nst-component">
+                                            <span class="filter-title nst-toggle">Mes filtres</span>
+                                            <div class="nst-content">
+                                                <div>
+                                                    <div class="f-divider"></div>
+                                                    <ul class="selected-attributes-list">
+                                                        <li><a href="#">Poulet</a></li>
+                                                        <li><a href="#">Dinde</a></li>
+                                                    </ul> 
+                                                    <a href="#" class="clear-selected">Tout supprimer</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="filter filter-main">
-                                    <div class="nst-component">
-                                        <span class="filter-title nst-toggle">Gamme principale</span>
-                                        <div class="nst-content">
-                                            <div>
-                                                <form action="#">
+                                    <div class="filter filter-main">
+                                        <div class="nst-component">
+                                            <span class="filter-title nst-toggle">Gamme principale</span>
+                                            <div class="nst-content">
+                                                <div>
                                                     <ul class="f-attribute-list">
                                                         <li>
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-one"/>Caille</label>
@@ -127,16 +126,14 @@
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Viandes, légumes et produits laitierst</label>
                                                         </li>
                                                     </ul>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="f-divider"></div>
-                                    <div class="nst-component">
-                                        <span class="filter-title nst-toggle">Conditionnement</span>
-                                        <div class="nst-content">
-                                            <div>
-                                                <form action="#">
+                                        <div class="f-divider"></div>
+                                        <div class="nst-component">
+                                            <span class="filter-title nst-toggle">Conditionnement</span>
+                                            <div class="nst-content">
+                                                <div>
                                                     <ul class="f-attribute-list">
                                                         <li>
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Vrac</label>
@@ -151,16 +148,14 @@
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Conserve</label>
                                                         </li>
                                                     </ul>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="f-divider"></div>
-                                    <div class="nst-component">
-                                        <span class="filter-title nst-toggle">Gamme élaborée</span>
-                                        <div class="nst-content">
-                                            <div>
-                                                <form action="#">
+                                        <div class="f-divider"></div>
+                                        <div class="nst-component">
+                                            <span class="filter-title nst-toggle">Gamme élaborée</span>
+                                            <div class="nst-content">
+                                                <div>
                                                     <ul class="f-attribute-list">
                                                         <li>
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Charcuterie</label>
@@ -172,16 +167,14 @@
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Traiteur</label>
                                                         </li>
                                                     </ul>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="f-divider"></div>
-                                    <div class="nst-component">
-                                        <span class="filter-title nst-toggle">Spécifique</span>
-                                        <div class="nst-content">
-                                            <div>
-                                                <form action="#">
+                                        <div class="f-divider"></div>
+                                        <div class="nst-component">
+                                            <span class="filter-title nst-toggle">Spécifique</span>
+                                            <div class="nst-content">
+                                                <div>
                                                     <ul class="f-attribute-list">
                                                         <li>
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Classique</label>
@@ -193,16 +186,14 @@
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Nature & respect</label>
                                                         </li>
                                                     </ul>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="f-divider"></div>
-                                    <div class="nst-component">
-                                        <span class="filter-title nst-toggle">Conservation</span>
-                                        <div class="nst-content">
-                                            <div>
-                                                <form action="#">
+                                        <div class="f-divider"></div>
+                                        <div class="nst-component">
+                                            <span class="filter-title nst-toggle">Conservation</span>
+                                            <div class="nst-content">
+                                                <div>
                                                     <ul class="f-attribute-list">
                                                         <li>
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Congelé</label>
@@ -214,16 +205,14 @@
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Temperature ambiante</label>
                                                         </li>
                                                     </ul>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="f-divider"></div>
-                                    <div class="nst-component">
-                                        <span class="filter-title nst-toggle">Certification</span>
-                                        <div class="nst-content">
-                                            <div>
-                                                <form action="#">
+                                        <div class="f-divider"></div>
+                                        <div class="nst-component">
+                                            <span class="filter-title nst-toggle">Certification</span>
+                                            <div class="nst-content">
+                                                <div>
                                                     <ul class="f-attribute-list">
                                                         <li>
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Halal</label>
@@ -238,16 +227,16 @@
                                                             <label><input type="checkbox" class="f-checkbox" rel="attribute-two"/>Bleu Blanc Coeur</label>
                                                         </li>
                                                     </ul>
-                                                </form>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="f-divider"></div>
                                     </div>
-                                    <div class="f-divider"></div>
                                 </div>
-                            </div>
-                            <div class="m-filter-bottom">
-                                <button class="btn">VALIDER</button>
-                            </div>
+                                <div class="m-filter-bottom">
+                                    <button class="btn">VALIDER</button>
+                                </div>
+                            </form>
                         </div>
                         <div class="products-grid-holder">
                             <h2 class="h2 decoration">POULET</h2>
@@ -354,106 +343,11 @@
                                     <a href="#" class="item-button"></a>   
                                 </li>
                             </ul>
-                            <div class="product-popup hide-content" id="product-popup">
-                                <div class="popup-top">
-                                    <span class="popup-title"><i class="icon-poulet"></i>Poulet - Cuisse</span>
-                                    <button data-fancybox-close class="close-popup" title="Close"></button>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
-                                <div class="popup-main">
-                                    <span class="marked-red"><i class="icon-package"></i>Caractéristiques</span>
-                                    <div class="popup-info-row">
-                                        <a href="#" class="btn favoris-link">Favoris</a>
-                                        <div class="text-field">
-                                            <strong>Cuisse entière</strong>
-                                        </div>
-                                        <div class="icons-field">
-                                            <i class="icon-i-snow"></i>
-                                            <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
-                                            <div class="img-holder"><img src="assets/images/logo-small_bbc.png" alt="BBC"></div>
-                                            <div class="img-holder"><img src="assets/images/logo-small_label-r.png" alt="label-Rouge"></div>
-                                        </div>   
-                                    </div>
-                                    <div class="popup-info-row">
-                                        <a href="#" class="btn favoris-link">Favoris</a>
-                                        <div class="text-field">
-                                            <strong>Haut de cuisse</strong>
-                                        </div>
-                                        <div class="icons-field">
-                                            <i class="icon-i-snow"></i>
-                                            <div class="img-holder"><img src="assets/images/logo-small_halal.png" alt="halala"></div>
-                                            <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
-                                        </div>   
-                                    </div>
-                                    <div class="popup-info-row">
-                                        <a href="#" class="btn favoris-link">Favoris</a>
-                                        <div class="text-field">
-                                            <strong>Cuisse s/peau</strong>
-                                        </div>
-                                        <div class="icons-field">
-                                            <i class="icon-i-snow"></i>
-                                            <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
-                                            <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
-                                        </div>   
-                                    </div>
-                                    <div class="popup-info-row">
-                                        <a href="#" class="btn favoris-link">Favoris</a>
-                                        <div class="text-field">
-                                            <strong>Cuisse s/peau</strong>
-                                        </div>
-                                        <div class="icons-field">
-                                            <i class="icon-i-snow"></i>
-                                            <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
-                                            <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
-                                        </div>   
-                                    </div>
-                                    <div class="popup-info-row">
-                                        <a href="#" class="btn favoris-link">Favoris</a>
-                                        <div class="text-field">
-                                            <strong>Cuisse s/peau</strong>
-                                        </div>
-                                        <div class="icons-field">
-                                            <i class="icon-i-snow"></i>
-                                            <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
-                                            <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
-                                        </div>   
-                                    </div>
-                                    <div class="popup-info-row">
-                                        <a href="#" class="btn favoris-link">Favoris</a>
-                                        <div class="text-field">
-                                            <strong>Cuisse s/peau</strong>
-                                        </div>
-                                        <div class="icons-field">
-                                            <i class="icon-i-snow"></i>
-                                            <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
-                                            <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
-                                        </div>   
-                                    </div>
-                                    <div class="popup-info-row">
-                                        <a href="#" class="btn favoris-link">Favoris</a>
-                                        <div class="text-field">
-                                            <strong>Cuisse s/peau</strong>
-                                        </div>
-                                        <div class="icons-field">
-                                            <i class="icon-i-snow"></i>
-                                            <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
-                                            <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
-                                        </div>   
-                                    </div>
-                                </div>
-                                <div class="popup-bottom">
-                                    <p>Pour plus d’informations</p>
-                                    <a href="#" class="btn">Contactez-nous</a>
-                                </div> 
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-        <div class="container">
-            Eveniet sit cum totam dolorem quae deserunt, doloribus nam. Velit laborum, voluptas suscipit impedit ipsum cupiditate deleniti deserunt odit quia ad? Voluptatem doloribus fugit, esse! Nostrum fugit fuga asperiores sed, iste, hic ad, accusantium mollitia rerum odio dicta ratione obcaecati optio aperiam voluptatem ex voluptates modi dignissimos repellendus cum repellat! Quis tenetur ipsam voluptatum unde alias eius officiis quae illo facilis a dolores repellat ad accusamus harum excepturi sapiente nemo facere sed soluta tempore, nobis impedit eligendi.
-        </div>
     </div>
     <div class="callback">
         <div class="red-line">
@@ -466,7 +360,226 @@
         </div>
         <span class="m-close">X</span>
     </div>
+    <div class="product-popup hide-content" id="product-popup">
+        <div class="popup-top">
+            <span class="popup-title"><i class="icon-poulet"></i>Poulet - Cuisse</span>
+            <button data-fancybox-close class="close-popup" title="Close"></button>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+        <div class="popup-main">
+            <span class="marked-red"><i class="icon-package"></i>Caractéristiques</span>
+            <div class="popup-info-row">
+                <a href="#" class="btn favoris-link">Favoris</a>
+                <div class="text-field">
+                    <strong>Cuisse entière</strong>
+                </div>
+                <div class="icons-field">
+                    <i class="icon-i-snow"></i>
+                    <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
+                    <div class="img-holder"><img src="assets/images/logo-small_bbc.png" alt="BBC"></div>
+                    <div class="img-holder"><img src="assets/images/logo-small_label-r.png" alt="label-Rouge"></div>
+                </div>   
+            </div>
+            <div class="popup-info-row">
+                <a href="#" class="btn favoris-link">Favoris</a>
+                <div class="text-field">
+                    <strong>Haut de cuisse</strong>
+                </div>
+                <div class="icons-field">
+                    <i class="icon-i-snow"></i>
+                    <div class="img-holder"><img src="assets/images/logo-small_halal.png" alt="halala"></div>
+                    <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
+                </div>   
+            </div>
+            <div class="popup-info-row">
+                <a href="#" class="btn favoris-link">Favoris</a>
+                <div class="text-field">
+                    <strong>Cuisse s/peau</strong>
+                </div>
+                <div class="icons-field">
+                    <i class="icon-i-snow"></i>
+                    <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
+                    <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
+                </div>   
+            </div>
+            <div class="popup-info-row">
+                <a href="#" class="btn favoris-link">Favoris</a>
+                <div class="text-field">
+                    <strong>Cuisse s/peau</strong>
+                </div>
+                <div class="icons-field">
+                    <i class="icon-i-snow"></i>
+                    <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
+                    <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
+                </div>   
+            </div>
+            <div class="popup-info-row">
+                <a href="#" class="btn favoris-link">Favoris</a>
+                <div class="text-field">
+                    <strong>Cuisse s/peau</strong>
+                </div>
+                <div class="icons-field">
+                    <i class="icon-i-snow"></i>
+                    <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
+                    <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
+                </div>   
+            </div>
+            <div class="popup-info-row">
+                <a href="#" class="btn favoris-link">Favoris</a>
+                <div class="text-field">
+                    <strong>Cuisse s/peau</strong>
+                </div>
+                <div class="icons-field">
+                    <i class="icon-i-snow"></i>
+                    <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
+                    <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
+                </div>   
+            </div>
+            <div class="popup-info-row">
+                <a href="#" class="btn favoris-link">Favoris</a>
+                <div class="text-field">
+                    <strong>Cuisse s/peau</strong>
+                </div>
+                <div class="icons-field">
+                    <i class="icon-i-snow"></i>
+                    <i class="icon-thermometer-outlined-symbol-of-stroke"></i>
+                    <div class="img-holder"><img src="assets/images/logo-small_volaille-francaise.png" alt="Volaille-Francaise"></div>
+                </div>   
+            </div>
+        </div>
+        <div class="popup-bottom">
+            <p>Pour plus d’informations</p>
+            <a href="#" class="btn">Contactez-nous</a>
+        </div> 
+    </div>
     <div class="mask"></div>
+    <footer id="footer">
+        <div class="container">
+            <div class="top-row">
+                <div class="logo-holder">
+                    <a href="/" class="logo"><img src="assets/images/logo.svg" width="148" height="257"  alt="L.D.C. FOODS"></a>
+                    <span class="copy"><a href="#">LDC Food</a> © 2017 <br> Mentions légales</span>
+                </div>
+                <div class="contact-row">
+                    <h4 class="h4">CONTACT</h4>
+                    <div class="contact-links">
+                        <a href="#" class="video-link">
+                            <div class="video-box">
+                                <video preload="auto" autoplay>
+                                    <source src="assets/videos/video-gallery/video1.webm" type="video/webm">
+                                    <source src="assets/videos/video-gallery/video1.3gp" type="video/3gp">
+                                    <source src="assets/videos/video-gallery/video1.mp4" type="video/mp4">
+                                    <source src="assets/videos/video-gallery/video1.ogv" type="video/ogg">
+                                </video>
+                            </div>
+                            <div class="descr-box">
+                                <div class="title-text">
+                                    <strong class="name">MAGALIE LORAND</strong>
+                                    <span class="position">Europe</span>
+                                </div>
+                                <span class="btn btn-contact  btn-thin">  
+                                Contactez   
+                                </span>
+                            </div>
+                        </a>
+                        <a href="#" class="video-link">
+                            <div class="video-box">
+                                <video preload="auto" autoplay>
+                                    <source src="assets/videos/video-gallery/video1.webm" type="video/webm">
+                                    <source src="assets/videos/video-gallery/video1.3gp" type="video/3gp">
+                                    <source src="assets/videos/video-gallery/video1.mp4" type="video/mp4">
+                                    <source src="assets/videos/video-gallery/video1.ogv" type="video/ogg">
+                                </video>
+                            </div>
+                            <div class="descr-box">
+                                <div class="title-text">
+                                    <strong class="name">LAETITIA BODIN</strong>
+                                    <span class="position">Afrique, Océanie</span>
+                                </div>
+                                <span class="btn btn-contact  btn-thin">  
+                                Contactez   
+                                </span>
+                            </div>
+                        </a>
+                        <a href="#" class="video-link">
+                            <div class="video-box">
+                                <video preload="auto" autoplay>
+                                    <source src="assets/videos/video-gallery/video1.webm" type="video/webm">
+                                    <source src="assets/videos/video-gallery/video1.3gp" type="video/3gp">
+                                    <source src="assets/videos/video-gallery/video1.mp4" type="video/mp4">
+                                    <source src="assets/videos/video-gallery/video1.ogv" type="video/ogg">
+                                </video>
+                            </div>
+                            <div class="descr-box">
+                                <div class="title-text">
+                                    <strong class="name">LYDIA TOUEILLE</strong>
+                                    <span class="position">Asie, Amerique</span>
+                                </div>
+                                <span class="btn btn-contact btn-thin">  
+                                Contactez   
+                                </span>
+                            </div>
+                        </a>
+                        <a href="#" class="video-link">
+                            <div class="video-box">
+                                <video preload="auto" autoplay>
+                                    <source src="assets/videos/video-gallery/video1.webm" type="video/webm">
+                                    <source src="assets/videos/video-gallery/video1.3gp" type="video/3gp">
+                                    <source src="assets/videos/video-gallery/video1.mp4" type="video/mp4">
+                                    <source src="assets/videos/video-gallery/video1.ogv" type="video/ogg">
+                                </video>
+                            </div>
+                            <div class="descr-box">
+                                <div class="title-text">
+                                    <strong class="name">LYDIA TOUEILLE</strong>
+                                    <span class="position">Asie, Amerique</span>
+                                </div>
+                                <span class="btn btn-contact  btn-thin">  
+                                Contactez   
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-row">
+                <div class="col">
+                    <h4 class="h4">SIEGE</h4>
+                    <div class="info">
+                        <address>
+                            Z.I. du Lay
+                            <br> 56660 Saint-Jean-Brevelay
+                            <br> FRANCE
+                        </address>
+                        <a href="tel:330297603388">Tel : +33(0)2 97 60 33 88</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4 class="h4">NEWSLETTER</h4>
+                    <div class="info">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        <form action="#" class="subscribe-form">
+                            <input type="email" required placeholder="S’inscrire à la newsletter">
+                            <button>ok</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4 class="h4">BUREAU DE VENTE</h4>
+                    <div class="info">
+                        <address>
+                            7 rue du Paradis
+                            <br> 53000 Laval
+                            <br> FRANCE
+                        </address>
+                        <a href="tel:330243490860">Tel : +33(0)2 43 49 08 60</a>
+                        <a href="tel:330243569426">Fax : +33(0)2 43 53 94 26</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        <img id="video-mask-image" src="assets/images/video-mask.png" alt="poolygon mask for video" style="display:none;">
     <script src="assets/js/vendor.min.js" defer></script>
     <script src="assets/js/app.js" defer></script>
 </body>
