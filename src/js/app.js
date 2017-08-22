@@ -6,10 +6,8 @@ import owlSlide from './modules/sliders';
 import parallax from './modules/parallax';
 
 (($) => {
-
     iosDetect();
     menus();
-
     videoBox();
     owlSlide();
     parallax();
@@ -45,12 +43,9 @@ import parallax from './modules/parallax';
         $('.m-filter-opener').removeClass('opened');
         $('body').removeClass('m-filter-open');
     });
-
     (function($) {
         var $window = $(window),
             $nst = $('.nst-component');
-
-
         function resize() {
             if ($window.width() < 768) {
                 return $nst.addClass('nst-is-collapsed');
@@ -58,12 +53,11 @@ import parallax from './modules/parallax';
 
             $nst.removeClass('nst-is-collapsed');
         }
-
         $window
             .resize(resize)
             .trigger('resize');
     })(jQuery);
 
 
-
+    
 })(jQuery);
