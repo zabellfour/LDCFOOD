@@ -2,7 +2,7 @@ var videoBanner = function() {
     setTimeout(function() {
         if ($('.video-banner').length) {
             if ($(window).width() > 1024) {
-                console.log(">1024");
+
                 $(window).scroll(function() {
                     $('.video-banner video').each(function() {
                         if ($(this).is(":in-viewport(150)")) {
@@ -14,7 +14,6 @@ var videoBanner = function() {
                 });
             } else {
                 $('.video-banner video').each(function() {
-                    console.log("<1024");
                     $(this)[0].pause();
                 });
             }
@@ -26,7 +25,15 @@ var videoBanner = function() {
         });
     }, 500);
 
+    $(".fancybox-close-small").click(function() {
+        console.log('fre');
+        $(".fancybox-inner video").click();
 
+    });
+
+$(document).on('afterShow.fb', function( e, instance, slide ) {
+	$('.fancybox-slide video')[0].play();
+});
 
 };
 export default videoBanner;

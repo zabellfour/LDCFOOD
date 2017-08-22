@@ -33,19 +33,12 @@
         @include media('<tablet') {
             margin-left: 0;
         }
-        img {
-            width: 1000px;
-            height: auto;
-            max-width: none;
-            position: absolute;
-            top: 0px;
-            left: 50%;
-            transform: translate(-50%, 10vh);
-            @include animate(top, .08s);
-            @include media('<desktop') {
-                       transform: translate(-50%, 5vh);	
-            }	
-        }
+
+    }
+    .parallax {
+        background-size: cover;
+        background-position: center;
+        background-size: 100vh;
     }
     .owl-dots {
         margin-top: 81px !important;
@@ -101,7 +94,7 @@
 
 .text-image-box {
     @extend .text-image-carousel;
-		margin-bottom: 84px;	
+    margin-bottom: 84px;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -110,11 +103,11 @@
         padding: 67px 0 0 0;
     }
     @include media('<desktop') {
-    	margin: 40px;	
-    }	
+        margin: 40px;
+    }
     @include media('<tablet') {
-    	margin-bottom: 0;	
-    }	
+        margin-bottom: 0;
+    }
     @include media('<tablet') {
         flex-wrap: wrap;
         flex-direction: column;

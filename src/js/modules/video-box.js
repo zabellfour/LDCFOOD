@@ -1,7 +1,7 @@
 var videoBox = function() {
 
 
-    setTimeout(function() {
+
         var path = $('.video-box video');
         var videoBox = $('.video-link');
         for (var i = 0; i < path.length; i++) {
@@ -28,7 +28,7 @@ var videoBox = function() {
                 $(this).removeClass('hovered');
             };
         }
-    }, 700);
+ 
 
 
 
