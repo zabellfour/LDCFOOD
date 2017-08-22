@@ -6,18 +6,6 @@ $light-gray-2:	#eeeeee;
 	#wrapper {
 		background-color: $light-gray-1;
 	}
-	.banner {
-		margin-bottom: 180px;
-		@include media('<widescreen') {
-        	margin-bottom: 100px;
-    	}
-    	@include media('<desktop') {
-        	margin-bottom: 70px;
-    	}
-    	@include media('<tablet') {
-        	margin-bottom: 30px;
-    	}
-	}
 }
 
 .products-section-wrapper {

@@ -1,0 +1,84 @@
+
+.mark-interactive {
+	padding: 55px;
+	margin-bottom: 50px;
+	background-color: $black;
+	color: $white;
+}
+.interactive-holder {
+	display: flex;
+	position: relative;
+	.mark-holder {
+		padding: 10px 0;
+		display: flex;
+		width: 30%;
+		max-width: 320px;
+		flex-wrap: wrap;
+		border: 3px solid $white;
+		border-radius: 50%;
+		.m-row {
+			display: flex;
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			&:nth-child(2) {
+				.m-element {
+					&:after {
+						content: "-";
+						margin: 0 10px;
+					}
+					&:last-child {
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		.m-element {
+			display: inline-block;
+			font-size: 39px;
+			line-height: 1.3;
+			&.m-top {
+				&:hover {
+					+.d-m-top {
+						display: block;
+					}
+				}
+			}
+			&.m-middle-left {
+				&:hover {
+					+.d-m-middle-left {
+						display: block;
+					}
+				}
+			}
+		}
+		.m-top,.m-middle-left {
+				&:hover {
+				color: $red;
+				cursor: pointer;
+				&:after {
+					color: $white;
+				}
+			}
+		}
+	}
+	.description {
+		display: none;
+		position: absolute;
+		max-width: 440px;
+		top: 50%;
+		left: 70%;
+		transform: translate(-70%, -50%);
+	}
+	.marked {
+		color: $red;
+	}
+	.default-text {
+		display: block;
+		&.disable {
+			display: none;
+		}
+	}
+}
