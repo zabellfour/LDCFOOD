@@ -19,6 +19,7 @@
     h1 {
         color: $white;
         position: relative;
+        font-size: 57px;
         z-index: 2;
         @include media('<tablet') {
 			font-size: 32px;

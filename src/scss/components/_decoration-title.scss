@@ -2,6 +2,12 @@
 	position: relative;
 	padding: 35px 15px 35px 119px;
 	margin-bottom: 22px;
+	@include media('<desktop') {
+		padding: 35px 15px 35px 85px;
+	}
+	@include media('<tablet') {
+		padding: 20px 10px 15px 20px;
+	}
 	&:before {
 		content: " ";
 		position: absolute;
@@ -34,4 +40,8 @@
     		left: 91px;
 		}
 	}
+}
+
+.marked-red {
+	color: $red;
 }

@@ -1,84 +1,151 @@
-
 .mark-interactive {
 	padding: 55px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	background-color: $black;
 	color: $white;
+	@include media('<desktop') {
+		padding: 30px;
+	}
+	@include media('<tablet') {
+		padding: 15px;
+	}
+	h2 {
+		margin-bottom: 0;
+	}
 }
 .interactive-holder {
 	display: flex;
+	max-width: 950px;
+	width: 100%;
+	margin: 0 auto;
 	position: relative;
-	.mark-holder {
-		padding: 10px 0;
+	@include media('<desktop') {
+		max-width: 750px;
+	}
+}
+.mark-content-holder {
+	padding: 10px 0;
+	display: flex;
+	width: 320px;
+	height: 182px;
+	flex-wrap: wrap;
+	border: 3px solid $white;
+	border-radius: 50%;
+	@include media('<desktop') {
+		width: 250px;
+		height: 135px;
+	}
+	@include media('<tablet') {
+		width: 180px;
+		height: 90px;
+	}
+	.m-row {
 		display: flex;
-		width: 30%;
-		max-width: 320px;
-		flex-wrap: wrap;
-		border: 3px solid $white;
-		border-radius: 50%;
-		.m-row {
-			display: flex;
-			width: 100%;
-			align-items: center;
-			justify-content: center;
-			&:nth-child(2) {
-				.m-element {
-					&:after {
-						content: "-";
-						margin: 0 10px;
-					}
-					&:last-child {
-						&:after {
-							display: none;
-						}
-					}
-				}
-			}
-		}
-		.m-element {
-			display: inline-block;
-			font-size: 39px;
-			line-height: 1.3;
-			&.m-top {
-				&:hover {
-					+.d-m-top {
-						display: block;
-					}
-				}
-			}
-			&.m-middle-left {
-				&:hover {
-					+.d-m-middle-left {
-						display: block;
-					}
-				}
-			}
-		}
-		.m-top,.m-middle-left {
-				&:hover {
-				color: $red;
-				cursor: pointer;
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+		&:nth-child(2) {
+			.m-element {
 				&:after {
-					color: $white;
+					content: "-";
+					margin: 0 10px;
+				}
+			}
+		}
+		.m-middle-right {
+			&:after {
+			display: none;
+			}
+		}
+	}
+	.m-element {
+		@include animate(color, .3s)
+		display: inline-block;
+		font-size: 39px;
+		font-weight: 500px;
+		line-height: 1.3;
+		@include media('<desktop') {
+		font-size: 24px;
+		}
+		@include media('<tablet') {
+		font-size: 18px;
+		}
+		&.m-top {
+			&:hover {
+				+.d-m-top {
+					opacity: 1;
+				}
+			}
+		}
+		&.m-middle-left {
+			&:hover {
+				+.d-m-middle-left {
+					opacity: 1;
+				}
+			}
+		}
+		&.m-middle-center {
+			&:hover {
+				+.d-m-middle-center {
+					opacity: 1;
+				}
+			}
+		}
+		&.m-middle-right {
+			&:hover {
+				+.d-m-middle-right {
+					opacity: 1;
+				}
+			}
+		}
+		&.m-bottom {
+			&:hover {
+				+.d-m-bottom {
+					opacity: 1;
 				}
 			}
 		}
 	}
+	.m-element {
+			&:hover {
+			color: $red;
+			cursor: pointer;
+			&:after {
+				color: $white;
+			}
+		}
+	}
 	.description {
-		display: none;
+		@include animate(opacity, .3s)
+		opacity: 0;
 		position: absolute;
-		max-width: 440px;
+		width: 460px;
 		top: 50%;
-		left: 70%;
-		transform: translate(-70%, -50%);
+		right: 0;
+		transform: translateY(-50%);
+		font-size: 25px;
+		font-weight: 300;
+		line-height: 1.1;
+		@include media('<desktop') {
+			font-size: 18px;
+			width: 390px;
+		}
+		@include media('<tablet') {
+			font-size: 14px;
+			width: 300px;
+		}
+		@include media('<phone') {
+			width: 200px;
+		}
 	}
 	.marked {
 		color: $red;
 	}
 	.default-text {
-		display: block;
-		&.disable {
-			display: none;
+		display: inline-block;
+		opacity: 1;
+		&.inactive {
+			opacity: 0;
 		}
 	}
 }

@@ -24,7 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.icon-paper-plane:before {
+  content: "\e900";
+}
+.icon-herbal-spa-treatment-leaves:before {
+  content: "\e91e";
+}
 .icon-search:before {
   content: "\e91d";
   color: #e30613;

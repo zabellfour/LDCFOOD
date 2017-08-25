@@ -1,0 +1,262 @@
+.contact-text {
+	font-size: 22px;
+	font-weight: 300;
+	padding: 37px 15px;
+	text-align: center;
+	@include media('<widescreen') {
+    	font-size: 18px;
+    }
+    @include media('<tablet') {
+    	padding: 20px 10px;
+    	font-size: 14px;
+    }
+}
+
+.contact-form {
+	padding: 35px 25px;
+	background-color: $red;
+	background-position: 100% 0%;
+	background-repeat: no-repeat;
+	@include media('<tablet') {
+		padding: 15px 5px;
+	}
+	form {
+		width: 100%;
+		padding-bottom: 78px;
+		max-width: 710px;
+		position: relative;
+		@include media('<tablet') {
+			padding: 20px 0 50px 0;
+			width: 80%;
+			margin: 0 auto;
+		}
+		@include media('<phone') {
+			width: 100%;
+		}
+	}
+	ul {
+		@extend %listreset;
+	}
+	.btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 180px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		background: transparent;
+		border: 1px solid $white;
+		font-size: 19px;
+		font-weight: 300;
+		@include media('<tablet') {
+			min-width: 140px;
+			font-size: 16px;
+		}
+		i {
+			font-size: 24px;
+			margin-right: 13px;
+			@include media('<tablet') {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+.radio-box {
+	margin-bottom: 33px !important;
+	@include media('<desktop') {
+		margin-bottom: 15px !important;
+	}
+	li {
+		display: inline-block;
+		position: relative;
+		padding-left: 30px;
+		margin-right: 10px;
+		input[type=radio] {
+			position: absolute;
+			visibility: hidden;
+		}
+		label {
+			@include animate(color, .3s)
+			display: block;
+			font-size: 18px;
+			position: relative;
+			cursor: pointer;
+			color: $white;
+			@include media('<desktop') {
+		    	font-size: 16px;
+		    }
+			&:hover {
+				color: $gray-light;
+			}
+		}
+		.check	{
+			display: block;
+			position: absolute;
+			border: 2px solid $white;
+			border-radius: 100%;
+			height: 21px;
+			width: 21px;
+			top: 5px;
+			left: 0;
+			z-index: 2;
+			@include media('<desktop') {
+		    	top: 0;
+		    }
+			&:before {
+				@include animate(background-color, .3s)
+				display: block;
+				position: absolute;
+				content: '';
+				border-radius: 100%;
+				height: 9px;
+				width: 9px;
+				top: 4px;
+				left: 4px;
+				margin: auto;
+			}
+		}
+		&:hover {
+			.check {
+				&:before {
+					background-color: $white;
+				}
+			}
+		}
+		input[type=radio]:checked ~ .check {
+		  border: 2px solid $white;
+		}
+		input[type=radio]:checked ~ .check::before{
+		  background-color: $white;
+		}
+	}
+}
+
+
+.inputs-list {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	@include media('<tablet') {
+		li {
+			width: 100%;
+		}
+	}
+	.form-control {
+		@include animate(background-color, .3s)
+		width: 340px;
+		padding: 0 18px;
+		margin-bottom: 25px;
+		font-size: 18px;
+		line-height: 40px;
+		border: 0;
+		border-radius: 0;
+		outline: none;
+		@include media('<desktop') {
+			font-size: 16px;
+			line-height: 32px;
+			margin-bottom: 20px;
+		}
+		@include media('<tablet') {
+			width: 100%;
+			max-width: 100%;
+		}
+		@include placeholder {
+			color: $gray-light-3;
+		}
+		&:focus {
+			background-color: $gray-light;
+		}
+	}
+}
+
+
+.favoris-list {
+	width: 100%;
+	color: $white;
+	margin-bottom: 10px !important;
+	.f-list-title {
+		display: flex;
+		width: 100%;
+		max-width: 250px;
+		justify-content: flex-start;
+		margin-bottom: 10px;
+		img {
+			display: block;
+			width: 20px;
+			height: 20px;
+		}
+		span {
+			display: inline-block;
+			font-size: 18px;
+			text-transform: uppercase;
+			margin-left: 10px;
+			@include media('<desktop') {
+				font-size: 16px;
+			}
+		}
+	}
+	.favoris-option {
+		display: inline-block;
+		font-size: 16px;
+		background: transparent;
+		border: 0;
+		border-radius: 0;
+		outline: none;
+		color: $white;
+		line-height: 2;
+		@include media('<desktop') {
+			font-size: 14px;
+		}
+	}
+	.del-btn {
+		display: inline-block;
+		width: 19px;
+		height: 19px;
+		border: 0;
+		border-radius: 100%;
+		background-color: $white;
+		position: relative;
+		&:after {
+			display: block;
+			content: "x";
+			position: absolute;
+			top: 0;
+			left: 5px;
+			color: $red;
+			font-size: 18px;
+			line-height: 1;
+			font-weight: 500;
+		}
+	}
+}
+
+.message-field {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	color: $white;
+	label {
+		width: 100%;
+		font-size: 18px;
+		margin-bottom: 10px;
+		@include media('<desktop') {
+			font-size: 16px;
+		}
+	}
+	textarea {
+		@include animate(background-color, .3s)
+		padding: 18px;
+		width: 100%;
+		border: 0;
+		border-radius: 0;
+		outline: none;
+		box-shadow: 0px 0px 0px $white;
+		resize: none;
+		&:focus {
+			background-color: $gray-light;
+		}
+	}
+}

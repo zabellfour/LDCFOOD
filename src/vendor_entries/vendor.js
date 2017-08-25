@@ -11,5 +11,6 @@ module.exports = [
   './node_modules/seethru/dist/seeThru.min.js',
   './node_modules/native-slide-toggle/src/nst.js',
   './node_modules/is-in-viewport/lib/isInViewport.js',
-  './node_modules/parallaxify/src/parallaxify.js'
+  './node_modules/parallaxify/src/parallaxify.js',
+  './node_modules/scrollreveal/src/scrollreveal.js'
 ];

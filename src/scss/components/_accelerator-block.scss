@@ -1,0 +1,64 @@
+.accelerator-block {
+	margin: 0 auto;
+	margin-top: -29px;
+	margin-bottom: 22px;
+	max-width: 1175px;
+	display: flex;
+	align-items: center;
+	background-color: $white;
+	box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.4);
+	position: relative;
+	@include media('<desktop') {
+		max-width: 750px;
+	}
+	@include media('<tablet') {
+		max-width: 100%;
+		flex-wrap: wrap;
+	}
+	.acc-item {
+		padding: 25px 0 20px 0;
+		width: 25%;
+		@include media('<tablet') {
+			padding: 15px 0;
+		}
+		@media screen and (max-width: 550px) {
+          	width: 50%;
+          	padding: 10px 0;
+        }
+		a {
+			@include animate(color, .3s);
+			display: inline-block;
+			width: 100%;
+			color: $gray4;
+			font-size: 17px;
+			font-weight: 500;
+			text-align: center;
+			position: relative;
+			@include media('<desktop') {
+				font-size: 15px;
+			}
+			@include media('<tablet') {
+				font-size: 12px;
+			}
+			&:after {
+				@include animate(background-color, .3s);
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: -22px;
+				width: 100%;
+				height: 6px;
+				background-color: $white;
+				@include media('<tablet') {
+					bottom: -19px;
+					}
+				}
+			&:hover {
+				color: $red;
+				&:after {
+				background-color: $red;
+				}
+			}
+		}
+	}	
+}
