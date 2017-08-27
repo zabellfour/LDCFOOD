@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 200;
     opacity: 1;
     @include media('<desktop') {
         padding-top: 13px;

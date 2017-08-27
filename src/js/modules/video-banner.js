@@ -18,22 +18,24 @@ var videoBanner = function() {
                 });
             }
         }
-        $(window).resize(function() {
-            if ($(window).width() < 1024) {
-                $('.video-banner video')[0].pause();
+       
+    }, 500);
+ $(window).resize(function() {
+            if ($('.video-banner').length) {
+                if ($(window).width() < 1024) {
+                    $('.video-banner video')[0].pause();
+                }
             }
         });
-    }, 500);
-
     $(".fancybox-close-small").click(function() {
         console.log('fre');
         $(".fancybox-inner video").click();
 
     });
 
-$(document).on('afterShow.fb', function( e, instance, slide ) {
-	$('.fancybox-slide video')[0].play();
-});
+    $(document).on('afterShow.fb', function(e, instance, slide) {
+        $('.fancybox-slide video')[0].play();
+    });
 
 };
 export default videoBanner;
