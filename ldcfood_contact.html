@@ -36,7 +36,6 @@
                     </div>
                     <ul class="header-nav">
                         <li class="menu-close">&times;</li>
-                        <!--  <li class="current-menu-item"><a href="#">Nos Marques</a></li> -->
                         <li><a href="#">Nos Marques</a></li>
                         <li><a href="#">Nos Gammes</a></li>
                         <li><a href="#">Estampille CE</a></li>
@@ -87,27 +86,27 @@
                                     <input type="text" class="form-control" placeholder="Téléphone*:" required>
                                 </li>
                             </ul>
+                            <div class="f-list-title">
+                                <img src="assets/images/favorite-mark-stars.svg" width="26" height="26" alt="favosris">
+                                <span>Mes produits favoris</span>
+                            </div>
                             <ul class="favoris-list">
-                                <div class="f-list-title">
-                                    <img src="assets/images/favorite-mark-stars.svg" alt="favosris">
-                                    <span>Mes produits favoris</span>
-                                </div>
                                 <li>
                                     <input type="text" class="favoris-option" value="Poulet - cuisse entière">
-                                    <button class="del-btn"></button>
+                                    <span class="del-btn"></span>
                                 </li>
                                 <li>
                                     <input type="text" class="favoris-option" value="Poulet - Haut de cuisse">
-                                    <button class="del-btn"></button>
+                                    <span class="del-btn"></span>
                                 </li>
                                 <li>
                                     <input type="text" class="favoris-option" value="Cuisse s/peau">
-                                    <button class="del-btn"></button>
+                                    <span class="del-btn"></span>
                                 </li>
                             </ul>
                             <div class="message-field">
                                 <label for="message">Votre message *</label>
-                                <textarea rows="7" name="message" required></textarea>
+                                <textarea rows="7" id="message" required></textarea>
                             </div>
                             <button class="btn" type="submit"><i class="icon-paper-plane"></i><span>Envoyer</span></button>
                         </form>
@@ -120,7 +119,7 @@
         <div class="container">
             <div class="top-row">
                 <div class="logo-holder">
-                    <a href="/" class="logo"><img src="assets/images/logo.svg" width="148" hweight="257"  alt="L.D.C. FOODS"></a>
+                    <a href="/" class="logo"><img src="assets/images/logo.svg" width="148" height="257"  alt="L.D.C. FOODS"></a>
                     <span class="copy"><a href="#">LDC Food</a> © 2017 <br> Mentions légales</span>
                 </div>
                 <div class="contact-row">
@@ -222,7 +221,7 @@
                     <div class="info">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                         <form action="#" class="subscribe-form">
-                            <input type="emil" required placeholder="S’inscrire à la newsletter">
+                            <input type="email" required placeholder="S’inscrire à la newsletter">
                             <button>ok</button>
                         </form>
                     </div>
@@ -242,6 +241,15 @@
             </div>
         </div>
     </footer>
+    <div class="popup-contact">
+        <div class="popup-decor">
+            <i class="icon-right"></i>
+        </div>
+        <span class="text-1">Message envoyé</span>
+        <span class="text-2">lor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore. </span>
+        <span class="btn-close">OK</span>
+    </div>
+    <div class="mask"></div>
     <img id="video-mask-image" src="assets/images/video-mask.png" alt="poolygon mask for video" style="display:none;">
     <script src="assets/js/vendor.min.js" defer></script>
     <script src="assets/js/app.js" defer></script>

@@ -1,5 +1,9 @@
-.default-section.img-bg {
+.static-header {
 	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: 0 15%;
+}
+.default-section.img-bg {
 	.text-image-box {
 		padding: 0 35px;
 		justify-content: space-between;
@@ -83,6 +87,7 @@
 			&:nth-child(2) {
 				.m-element {
 					&:after {
+						color: $black;
 						margin: 0 5px;
 					}
 				}
@@ -95,9 +100,6 @@
 				&:hover {
 				color: $black;
 				cursor: default;
-				&:after {
-					color: $black;
-				}
 			}
 		}
 	}

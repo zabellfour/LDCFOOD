@@ -1,13 +1,13 @@
 .mark-interactive {
 	padding: 55px;
-	margin-bottom: 20px;
 	background-color: $black;
 	color: $white;
 	@include media('<desktop') {
 		padding: 30px;
 	}
 	@include media('<tablet') {
-		padding: 15px;
+		padding: 0;
+		padding-top: 15px;
 	}
 	h2 {
 		margin-bottom: 0;
@@ -15,11 +15,16 @@
 }
 .interactive-holder {
 	display: flex;
+	justify-content: space-between;
 	max-width: 950px;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
 	@include media('<desktop') {
+		max-width: 750px;
+	}
+	@include media('<tablet') {
+		flex-wrap: wrap;
 		max-width: 750px;
 	}
 }
@@ -32,12 +37,12 @@
 	border: 3px solid $white;
 	border-radius: 50%;
 	@include media('<desktop') {
-		width: 250px;
-		height: 135px;
+		width: 256px;
+		height: 145px;
 	}
 	@include media('<tablet') {
-		width: 180px;
-		height: 90px;
+		margin: 0 auto;
+		margin-bottom: 20px;
 	}
 	.m-row {
 		display: flex;
@@ -49,6 +54,7 @@
 				&:after {
 					content: "-";
 					margin: 0 10px;
+					color: $white;
 				}
 			}
 		}
@@ -70,40 +76,8 @@
 		@include media('<tablet') {
 		font-size: 18px;
 		}
-		&.m-top {
-			&:hover {
-				+.d-m-top {
-					opacity: 1;
-				}
-			}
-		}
-		&.m-middle-left {
-			&:hover {
-				+.d-m-middle-left {
-					opacity: 1;
-				}
-			}
-		}
-		&.m-middle-center {
-			&:hover {
-				+.d-m-middle-center {
-					opacity: 1;
-				}
-			}
-		}
-		&.m-middle-right {
-			&:hover {
-				+.d-m-middle-right {
-					opacity: 1;
-				}
-			}
-		}
-		&.m-bottom {
-			&:hover {
-				+.d-m-bottom {
-					opacity: 1;
-				}
-			}
+		@include media('<phone') {
+		font-size: 24px;
 		}
 	}
 	.m-element {
@@ -115,37 +89,53 @@
 			}
 		}
 	}
-	.description {
-		@include animate(opacity, .3s)
-		opacity: 0;
-		position: absolute;
-		width: 460px;
-		top: 50%;
-		right: 0;
-		transform: translateY(-50%);
-		font-size: 25px;
-		font-weight: 300;
-		line-height: 1.1;
-		@include media('<desktop') {
-			font-size: 18px;
-			width: 390px;
-		}
-		@include media('<tablet') {
-			font-size: 14px;
-			width: 300px;
-		}
-		@include media('<phone') {
-			width: 200px;
-		}
-	}
 	.marked {
 		color: $red;
 	}
-	.default-text {
-		display: inline-block;
-		opacity: 1;
-		&.inactive {
-			opacity: 0;
+}
+
+.description-block {
+	display: flex;
+	max-width: 460px;
+	justify-content: flex-start;
+	align-items: center;
+	@include media('<tablet') {
+		max-width: 100%;
+		width: 100%;
+		padding: 10px;
+	}
+	.description {
+		@include animate(opacity, .3s)
+		position: absolute;
+		margin-bottom: 0;
+		padding: 0 0 15px 15px;
+		font-size: 25px;
+		font-weight: 300;
+		line-height: 1.1;
+		opacity: 0;
+		@include media('<desktop') {
+		font-size: 20px;
+		}
+		@include media('<tablet') {
+		font-size: 18px;
+		text-align: center;
+		padding: 0;
+		}
+		&.active {
+			position: relative;
+			opacity: 1;
+		}
+		&.default-text {
+			@include animate(opacity, .3s)
+			position: relative;
+			opacity: 1;
+			&.inactive {
+				position: absolute;
+				opacity: 0;
+			}
+		}
+		.marked {
+			color: $red;
 		}
 	}
-}
+} 

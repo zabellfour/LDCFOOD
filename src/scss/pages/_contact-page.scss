@@ -19,6 +19,8 @@
 	background-repeat: no-repeat;
 	@include media('<tablet') {
 		padding: 15px 5px;
+		background-size: 100%;
+		background-position: 100% 100%;
 	}
 	form {
 		width: 100%;
@@ -78,7 +80,7 @@
 			visibility: hidden;
 		}
 		label {
-			@include animate(color, .3s)
+			@include animate(opacity, .3s)
 			display: block;
 			font-size: 18px;
 			position: relative;
@@ -88,22 +90,20 @@
 		    	font-size: 16px;
 		    }
 			&:hover {
-				color: $gray-light;
+				opacity: .7;
 			}
 		}
 		.check	{
+			@include animate(opacity, .3s)
 			display: block;
 			position: absolute;
 			border: 2px solid $white;
 			border-radius: 100%;
 			height: 21px;
 			width: 21px;
-			top: 5px;
+			top: 0;
 			left: 0;
 			z-index: 2;
-			@include media('<desktop') {
-		    	top: 0;
-		    }
 			&:before {
 				@include animate(background-color, .3s)
 				display: block;
@@ -119,9 +119,7 @@
 		}
 		&:hover {
 			.check {
-				&:before {
-					background-color: $white;
-				}
+				opacity: .7;
 			}
 		}
 		input[type=radio]:checked ~ .check {
@@ -172,30 +170,36 @@
 	}
 }
 
+.f-list-title {
+	display: flex;
+	width: 100%;
+	max-width: 250px;
+	justify-content: flex-start;
+	color: $white;
+	margin-bottom: 10px;
+	img {
+		display: block;
+		width: 20px;
+		height: 20px;
+	}
+	span {
+		display: inline-block;
+		font-size: 18px;
+		text-transform: uppercase;
+		margin-left: 10px;
+		@include media('<desktop') {
+			font-size: 16px;
+		}
+	}
+}
 
 .favoris-list {
 	width: 100%;
 	color: $white;
 	margin-bottom: 10px !important;
-	.f-list-title {
-		display: flex;
-		width: 100%;
-		max-width: 250px;
-		justify-content: flex-start;
-		margin-bottom: 10px;
-		img {
-			display: block;
-			width: 20px;
-			height: 20px;
-		}
-		span {
-			display: inline-block;
-			font-size: 18px;
-			text-transform: uppercase;
-			margin-left: 10px;
-			@include media('<desktop') {
-				font-size: 16px;
-			}
+	li {
+		&.disable {
+			display: none;
 		}
 	}
 	.favoris-option {
@@ -212,10 +216,10 @@
 		}
 	}
 	.del-btn {
+		@include animate(opacity, .3s)
 		display: inline-block;
 		width: 19px;
 		height: 19px;
-		border: 0;
 		border-radius: 100%;
 		background-color: $white;
 		position: relative;
@@ -229,6 +233,10 @@
 			font-size: 18px;
 			line-height: 1;
 			font-weight: 500;
+		}
+		&:hover {
+			opacity: .7;
+			cursor: pointer;
 		}
 	}
 }
@@ -258,5 +266,73 @@
 		&:focus {
 			background-color: $gray-light;
 		}
+	}
+}
+
+.form-sent-success {
+	.popup-contact {
+		display: block;
+		z-index: 2
+	}
+	.mask {
+		display: block;
+	}
+}
+
+.popup-contact {
+	display: none;
+	width: 100%;
+	max-width: 370px;
+	padding: 28px;
+	background-color: $white;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+	border-radius: 3px;
+	color: $black;
+	.popup-decor {
+		position: relative;
+		margin: 0 auto;
+		margin-top: -82px;
+		width: 109px;
+		height: 109px;
+		border-radius: 100%;
+		text-align: center;
+		background-color: #74ba36;
+		i {
+			font-size: 42px;
+			line-height: 109px;
+			color: $white;
+		}
+	}
+	span {
+		display: inline-block;
+		width: 100%;
+		font-weight: 300;
+		margin-bottom: 25px;
+		text-align: center;
+		font-size: 32px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	.text-1 {
+		margin-top: 10px;
+		font-size: 32px;
+	}
+	.text-2 {
+		font-size: 19px;
+	}
+	.btn-close {
+		display: inline-block;
+		width: 100%;
+		max-width: 318px;
+		background-color: #74ba36;
+		color: $white;
+		text-align: center;
+		border-radius: 4px;
+		font-size: 22px;
+		line-height: 56px;
 	}
 }
