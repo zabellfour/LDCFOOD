@@ -32,11 +32,15 @@
 	.section-element-decor {
 		position: absolute;
 		bottom: 0;
-		right: 0;
+		right: 15px;
 		width: 567px;
 		height: 40px;
 		border-bottom: 1px solid $red;
 		text-align: right;
+		@include media('<tablet') {
+				width: calc(100% - 30px);
+				left: 15px;
+			}
 		i {
 			display: inline-block;
 			font-size: 40px;

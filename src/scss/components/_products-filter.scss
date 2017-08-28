@@ -39,7 +39,7 @@
 .m-filter-wrapper {
 	@include media('<tablet') {
     	position: absolute;
-    	top: 50px;
+    	top: 110px;
     	left: 0;
     	right: 0;
     	bottom: 20px;
@@ -59,6 +59,7 @@
 	@include media('<tablet') {
 		@include animate(right, .3s)
         width: 60%;
+        padding-top: 60px;
         position: fixed;
         top: 0;
         bottom: 0;
@@ -217,15 +218,15 @@
 						content: "x";
 						display: inline-block;
 						position: absolute;
-						left: 3px;
+						left: 3.5px;
 						top: 2px;
 						font-size: 13px;
 						line-height: 1;
-						font-weight: 500;
+						font-weight: 400;
 					}
 				}
 				&:hover {
-					font-weight: 500; 
+					text-shadow: 1px 1px $black;
 				}
 			}
 		}

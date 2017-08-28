@@ -10,6 +10,7 @@ import callbackjs from './modules/callbackjs';
 import filterjs from './modules/filterjs';
 import markinteractive from './modules/markinteractive';
 import delbtn from './modules/delbtn';
+import popupclose from './modules/popupclose';
 
 
 (($) => {
@@ -25,4 +26,6 @@ import delbtn from './modules/delbtn';
     filterjs();
     markinteractive();
     delbtn();
+    popupclose();
 })(jQuery);
+

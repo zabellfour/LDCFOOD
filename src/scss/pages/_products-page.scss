@@ -92,9 +92,10 @@ $light-gray-2:	#eeeeee;
         	margin-bottom: 30px;
     	}
     	@include media('<phone') {
+    		width: 100%;
         	min-height: 220px;
     	}
-		.product-link {
+		.product-img {
 			width: 100%;
 			height: 164px;
 			display: flex;

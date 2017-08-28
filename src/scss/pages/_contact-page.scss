@@ -73,8 +73,6 @@
 	li {
 		display: inline-block;
 		position: relative;
-		padding-left: 30px;
-		margin-right: 10px;
 		input[type=radio] {
 			position: absolute;
 			visibility: hidden;
@@ -82,10 +80,13 @@
 		label {
 			@include animate(opacity, .3s)
 			display: block;
+			padding-left: 30px;
+			margin-right: 10px;
 			font-size: 18px;
 			position: relative;
 			cursor: pointer;
 			color: $white;
+			z-index: 1;
 			@include media('<desktop') {
 		    	font-size: 16px;
 		    }
@@ -103,7 +104,6 @@
 			width: 21px;
 			top: 0;
 			left: 0;
-			z-index: 2;
 			&:before {
 				@include animate(background-color, .3s)
 				display: block;
@@ -196,13 +196,11 @@
 .favoris-list {
 	color: $white;
 	margin-bottom: 10px !important;
-	li {
-		position: relative;
-	}
-	.favoris-option {
+	.favoris-option{
 		display: inline-block;
-		width: 100%;
 		max-width: 200px;
+		text-overflow: ellipsis;
+		overflow: hidden;
 		font-size: 16px;
 		background: transparent;
 		border: 0;
@@ -333,5 +331,6 @@
 		border-radius: 4px;
 		font-size: 22px;
 		line-height: 56px;
+		cursor: pointer;
 	}
 }
