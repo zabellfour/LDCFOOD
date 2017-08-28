@@ -18,11 +18,18 @@ var menus = function() {
 
     var markOpener = $('.mark-holder .btn');
     markOpener.on("click", function() {
-        $('.deskr-wrapper').fadeOut(0);
-        $('.mark-holder').css("margin-bottom", '0px');
-        $(this).parent().siblings('.deskr-wrapper').fadeIn(0);
-        var height = $(this).parent().siblings('.deskr-wrapper').innerHeight();
-        $(this).parent().parent().css("margin-bottom", height);
+        if ($(this).closest('.mark-holder').hasClass('wrapper-opened')) {
+            $('.deskr-wrapper').fadeOut(0);
+            $('.mark-holder').css("margin-bottom", '0px').children('.mark-box').removeClass('opened');
+            $(this).closest('.mark-holder').removeClass('wrapper-opened');
+        } else {
+            $('.mark-holder').removeClass('wrapper-opened');
+            $('.deskr-wrapper').fadeOut(0);
+            $('.mark-holder').css("margin-bottom", '0px').children('.mark-box').removeClass('opened');
+            $(this).parent().siblings('.deskr-wrapper').fadeIn(0);
+            var height = $(this).parent().siblings('.deskr-wrapper').innerHeight();
+            $(this).parent().parent().css("margin-bottom", height).addClass('wrapper-opened').children('.mark-box').addClass('opened');
+        }
     });
 
 

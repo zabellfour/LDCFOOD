@@ -7,7 +7,7 @@
     width: 99%;
     margin-left: 0.5%;
     margin-right: 0.5%;
-    margin-bottom: 30px;    
+    margin-bottom: 30px;
     &:after {
         content: '';
         width: 24%;
@@ -67,6 +67,7 @@
                 }
                 @include media('<phone') {
                     width: 100%;
+                    display:    none;
                 }
                 img {
                     position: relative;
@@ -76,7 +77,6 @@
                     width: auto;
                     height: auto;
                     flex-grow: 0;
-         
                 }
                 &:after {
                     content: '';
@@ -157,13 +157,26 @@
         }
     }
     .mark-box {
-        background-color: #eeeeee;
+        background-color: #eee;
         padding: 23px;
         text-align: center;
         margin: 0 0 24px;
         height: 236px;
         display: flex;
         flex-wrap: wrap;
+        position: relative;
+        &.opened {
+            &:after {
+                content: '';
+                position: absolute;
+                @include triangle(32px,
+                #eee,
+                down);
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
         @include media('<desktop') {
             margin-bottom: 14px;
             padding: 15px;
