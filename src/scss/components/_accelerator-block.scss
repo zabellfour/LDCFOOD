@@ -16,6 +16,8 @@
 		flex-wrap: wrap;
 	}
 	.acc-item {
+		display: flex;
+		align-items: center;
 		padding: 25px 0 20px 0;
 		width: 25%;
 		@include media('<tablet') {
@@ -29,6 +31,7 @@
 			@include animate(color, .3s);
 			display: inline-block;
 			width: 100%;
+			padding: 0 10px;
 			color: $gray4;
 			font-size: 17px;
 			font-weight: 500;

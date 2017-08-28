@@ -1,5 +1,6 @@
 var scrollreveal = function() {
 
+
     window.sr = ScrollReveal();
     if ($('#section-element-1').length) {
         sr.reveal('#section-element-1');
@@ -11,5 +12,8 @@ var scrollreveal = function() {
         sr.reveal('#section-element-3');
     }
 
+
+
 };
 export default scrollreveal;
+

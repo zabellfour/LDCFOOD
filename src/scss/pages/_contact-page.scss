@@ -194,16 +194,15 @@
 }
 
 .favoris-list {
-	width: 100%;
 	color: $white;
 	margin-bottom: 10px !important;
 	li {
-		&.disable {
-			display: none;
-		}
+		position: relative;
 	}
 	.favoris-option {
 		display: inline-block;
+		width: 100%;
+		max-width: 200px;
 		font-size: 16px;
 		background: transparent;
 		border: 0;
