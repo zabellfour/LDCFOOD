@@ -28,7 +28,6 @@ var videoBanner = function() {
             }
         });
     $(".fancybox-close-small").click(function() {
-        console.log('fre');
         $(".fancybox-inner video").click();
 
     });

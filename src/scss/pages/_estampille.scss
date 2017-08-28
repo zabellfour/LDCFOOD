@@ -83,6 +83,7 @@
 		width: 138px;
 		height: 79px;
 		border: 1px solid $black;
+		margin-bottom: 15px;
 		.m-row {
 			&:nth-child(2) {
 				.m-element {
@@ -106,8 +107,14 @@
 	.mark-title {
 		display: inline-block;
 		width: 100%;
+		padding: 15px 5px;
 		text-align: center;
-		line-height: 60px;
 		margin-bottom: 0;
+		word-wrap: break-word;
+		@include media('<tablet') {
+			height: auto;
+			font-size: 14px;
+			padding: 10px 5px;
+		}
 	}
 }
