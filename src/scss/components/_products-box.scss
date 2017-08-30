@@ -1,8 +1,5 @@
-
 .products-box {
     display: flex;
-
-
     flex-wrap: wrap;
     @include media('<tablet') {
         flex-direction: column-reverse;
@@ -164,7 +161,7 @@
 
             .head-menu {
                 @extend %listreset;
-          
+
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
@@ -178,8 +175,8 @@
                 background-color: #f6f6f6;
                 z-index: 99;
                 @include media('>tablet') {
-                      @include animate(opacity visibility);
-                  }
+                    @include animate(opacity visibility);
+                }
                 @include media('<tablet') {
                     position: static;
                     height: 0;
@@ -235,7 +232,7 @@
                     visibility: visible;
                     transform: translateY(0%);
                     position: relative;
-                    height: auto;
+                    height: 585px;
                 }
             }
         }
@@ -257,11 +254,15 @@
         align-items: flex-start;
         justify-content: flex-start;
         @include media('<tablet') {
-            @include animate(opacity visibility transform);
+            overflow: hidden;
+            z-index: -1;
+            @include animate(all);
             opacity: 0;
             visibility: hidden;
-            height: 0;
+            position: relative;
             display: block;
+            height: 0;
+            transform: translateY(-100%);
         }
     }
     .col-body {
@@ -273,10 +274,12 @@
 
 
         .body-box {
+            display: block;
             text-align: center;
             background-color: transparent;
             padding: 40px 13px 37px;
             position: relative;
+            color: inherit;
             @include media('<desktop') {
                 padding: 5px 8px;
             }
@@ -318,6 +321,22 @@
                     i {
                         color: $white;
                         font-size: 88px;
+                    }
+                    .btn {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                @include media('>tablet', '<desktop') {
+                    background-color: $red;
+                    color: $white;
+                    padding: 5px 8px;
+                    &:after {
+                        opacity: 0;
+                    }
+                    i {
+                        color: $white;
+                        font-size: 50px;
                     }
                     .btn {
                         opacity: 1;

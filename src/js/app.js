@@ -15,11 +15,11 @@ import popupclose from './modules/popupclose';
 
 (($) => {
     iosDetect();
+   
+    videoBanner();
     menus();
-    videoBox();
     owlSlide();
     parallax();
-    videoBanner();
     scrollreveal();
     smoothscroll();
     callbackjs();
@@ -27,5 +27,6 @@ import popupclose from './modules/popupclose';
     markinteractive();
     delbtn();
     popupclose();
+     videoBox();
 })(jQuery);
 

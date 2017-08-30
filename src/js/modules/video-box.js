@@ -1,9 +1,7 @@
 var videoBox = function() {
 
-
-
-        var path = $('.video-box video');
-        var videoBox = $('.video-link');
+        var path = $('footer .video-box video');
+        var videoBox = $('footer .video-link');
         for (var i = 0; i < path.length; i++) {
             seeThru.create(path[i], {
                 mask: '#video-mask-image',
@@ -16,14 +14,18 @@ var videoBox = function() {
         }
 
         function hoverInListen(i) {
+
             return function(e) {
+                $(this).find('video')[0].muted = false;
                 $(this).find('video')[0].play();
                 $(this).addClass('hovered');
+             
             };
         }
 
         function hoverOutListen(i) {
             return function(e) {
+                $(this).find('video')[0].muted = true;
                 $(this).find('video')[0].pause();
                 $(this).removeClass('hovered');
             };
