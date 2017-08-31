@@ -12,6 +12,14 @@ var scrollreveal = function() {
     if ($('#section-element-4').length) {
         sr.reveal('#section-element-4');
     }
+    if ($('.sr-left').length) {
+        sr.reveal('.sr-left', { duration: 1200, origin: 'left', distance: '120px', delay: 100 });
+    }
+    if ($('.sr-right').length) {
+        sr.reveal('.sr-right', { duration: 1200, origin: 'right', distance: '120px', delay: 100 });
+    }
+    if ($('.sr-bottom').length) {
+        sr.reveal('.sr-bottom', { duration: 1200, origin: 'bottom', distance: '120px', delay: 100 });
+    }
 };
 export default scrollreveal;
-

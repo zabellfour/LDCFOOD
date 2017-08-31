@@ -38,7 +38,7 @@
         }
         &:before {
             @include media('<tablet') {
-                @include animate(transform  left );
+                @include animate(transform left);
                 content: '';
                 width: 10px;
                 height: 10px;
@@ -238,11 +238,16 @@
                     transform: translateY(0%);
                     position: relative;
                     height: 585px;
+                    z-index: 1;
                 }
             }
         }
         .opener {
             display: none;
+                position: relative; z-index:    10;
+                .box-row{
+                    z-index:    9;
+                }
             @include media('<tablet') {
                 display: block;
             }
@@ -261,7 +266,7 @@
         @include media('<tablet') {
             overflow: hidden;
             z-index: -1;
-            @include animate(all 0.5s);
+            @include animate(all 0.15s);
             opacity: 0;
             visibility: hidden;
             position: relative;
@@ -276,8 +281,6 @@
         @include media('<tablet') {
             width: 100%;
         }
-
-
         .body-box {
             display: block;
             text-align: center;
