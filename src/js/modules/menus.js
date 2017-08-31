@@ -1,4 +1,27 @@
 var menus = function() {
+    var subMenu = function() {
+        $('.col-head .opener').on("click", function() {
+
+            var totalHeight = 0;
+            if ($(this).siblings('.head-menu').outerHeight(true)) {
+                $(this).siblings('.head-menu').animate({ height: 0 }, 150);
+
+            } else {
+
+                $(this).siblings('.head-menu').children().each(function() {
+                    totalHeight = totalHeight + $(this).outerHeight(true);
+                });
+                $(this).siblings('.head-menu').animate({ height: totalHeight }, 150);
+
+            }
+        });
+    };
+
+
+
+    subMenu();
+
+
 
     $('.products-box .opener').on("click", function() {
         $(this).parent().toggleClass('opened');

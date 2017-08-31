@@ -27,10 +27,10 @@ var owlSlide = function() {
 
     });
 
- 
+
 
     function adjustStretchHeader() {
-        console.log('dsf');
+
         var el = $('.owl-carousel .video-box video');
         for (var y = 0; y < el.length; y++) {
             el[y].pause();
@@ -76,7 +76,7 @@ var owlSlide = function() {
         }
     }
 
-    function attachEvent() { console.log('init'); }
+
     $('.text-image-carousel').owlCarousel({
         nav: false,
         items: 1
