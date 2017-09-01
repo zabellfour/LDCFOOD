@@ -41,17 +41,22 @@ var menus = function() {
 
     var markOpener = $('.mark-holder .btn');
     markOpener.on("click", function() {
+        var height = $(this).parent().siblings('.deskr-wrapper').children('.deskr-inner').innerHeight();
         if ($(this).closest('.mark-holder').hasClass('wrapper-opened')) {
-            $('.deskr-wrapper').fadeOut(0);
-            $('.mark-holder').css("margin-bottom", '0px').children('.mark-box').removeClass('opened');
             $(this).closest('.mark-holder').removeClass('wrapper-opened');
+            $('.mark-holder').children('.mark-box').removeClass('opened');
+            $('.mark-holder').animate({ "margin-bottom": 0 });
+            $(this).closest('.mark-box').siblings('.deskr-wrapper').animate({ "height": 0 });
         } else {
+            if ($('.mark-holder').hasClass('wrapper-opened')) {
+                $('.mark-holder').animate({ "margin-bottom": 0 });
+                $('.deskr-wrapper').animate({ "height": 0 });
+            }
             $('.mark-holder').removeClass('wrapper-opened');
-            $('.deskr-wrapper').fadeOut(0);
-            $('.mark-holder').css("margin-bottom", '0px').children('.mark-box').removeClass('opened');
-            $(this).parent().siblings('.deskr-wrapper').fadeIn(0);
-            var height = $(this).parent().siblings('.deskr-wrapper').innerHeight();
-            $(this).parent().parent().css("margin-bottom", height).addClass('wrapper-opened').children('.mark-box').addClass('opened');
+            $('.mark-holder').children('.mark-box').removeClass('opened');
+            $(this).parent().parent().animate({ "margin-bottom": height+20 });
+            $(this).parent().parent().addClass('wrapper-opened').children('.mark-box').addClass('opened');
+            $(this).closest('.mark-box').siblings('.deskr-wrapper').animate({ "height": height });
         }
     });
 

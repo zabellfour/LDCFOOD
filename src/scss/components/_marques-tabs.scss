@@ -33,13 +33,14 @@
     }
 
     .deskr-wrapper {
-        display: none;
+        display: block;
         position: absolute;
         left: 0;
         right: 0;
-        padding-bottom: 20px;
+        padding: 0px;
+height: 0;overflow: hidden;
         @include media('<desktop') {
-            padding-bottom: 14px;
+            padding-bottom: 0px;
         }
         .deskr-inner {
             width: 100%;
@@ -67,7 +68,7 @@
                 }
                 @include media('<phone') {
                     width: 100%;
-                    display:    none;
+                    display: none;
                 }
                 img {
                     position: relative;
@@ -178,7 +179,7 @@
             }
         }
         @include media('<desktop') {
-            margin-bottom: 14px;
+            margin-bottom: 24px;
             padding: 15px;
             height: 220px;
         }
