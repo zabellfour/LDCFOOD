@@ -6,8 +6,27 @@
         background-color: $black;
         color: $white;
         text-align: center;
+        font-size: 16px;
+        line-height: 2;
         margin-bottom: 30px;
+        text-transform: uppercase;
     }
+    i {
+    	display: inline-block;
+    	margin-left: 7px;
+    	width: 18px;
+    	height: 18px;
+    	font-size: 12px;
+    	line-height: 18px;
+    	color: $black;
+    	border-radius: 100%;
+    	background-color: $white;
+    }
+}
+
+.f-quantity {
+	margin-right: 5px;
+	font-size: 16px;
 }
 
 .m-filter-open {
@@ -22,18 +41,25 @@
 		display: block;
 	}
 	.m-filter-data {
-		display: block;
+		display: flex;
 	}
 }
 
 .m-filter-data {
 	display: none;
-	padding-left: 15px;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 15px;
 	line-height: 50px;
 	font-size: 16px;
 	font-weight: 500;
 	color: $white;
-	background-color: $black
+	background-color: $black;
+	.btn-reload {
+		padding: 5px 15px;
+		font-size: 13px;
+		font-weight: 300;
+	}
 }
 
 .m-filter-wrapper {
@@ -84,8 +110,12 @@
 			}
 			@include media('<tablet') {
 				.filter-title {
-					font-weight: 500;
+					display: none;
 				}
+				.nst-content {
+					display: block;
+				}
+
 			}
 		}
 		&-main {
@@ -157,6 +187,7 @@
 					display: inline-block;
 					font-weight: 500;
 					margin-right: 10px;
+					font-size: 18px;
 				}
 			}
 		}
@@ -169,6 +200,9 @@
 		color: inherit;
 		text-decoration: none;
 		margin-bottom: 10px;
+		@include media('<tablet') {
+			display: none;
+		}
 		&:before {
 			content: 'X';
 			display: inline-block;

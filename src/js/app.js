@@ -12,6 +12,7 @@ import markinteractive from './modules/markinteractive';
 import delbtn from './modules/delbtn';
 import popupclose from './modules/popupclose';
 import resizeinput from './modules/resizeinput';
+import numberOfFilters from './modules/numberfilters';
 
 
 (($) => {
@@ -29,6 +30,7 @@ import resizeinput from './modules/resizeinput';
     popupclose();
     videoBox();
     resizeinput();
+    numberOfFilters();
 
 })(jQuery);
 

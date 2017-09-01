@@ -214,19 +214,19 @@
 	.del-btn {
 		@include animate(opacity, .3s)
 		display: inline-block;
-		width: 19px;
-		height: 19px;
+		width: 20px;
+		height: 20px;
+		top: 4px;
 		border-radius: 100%;
 		background-color: $white;
 		position: relative;
 		&:after {
 			display: block;
-			content: "x";
+			content: "\00d7";
 			position: absolute;
-			top: 0;
 			left: 5px;
 			color: $red;
-			font-size: 18px;
+			font-size: 20px;
 			line-height: 1;
 			font-weight: 500;
 		}

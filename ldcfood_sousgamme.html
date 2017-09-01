@@ -54,10 +54,17 @@
             <div id="content">
                 <div class="container">
                     <div class="products-section-wrapper">
-                        <span class="m-filter-opener">FILTER</span>
+                        <div class="m-filter-opener">
+                            <span class="f-quantity"></span>
+                            <span>Filtre</span>
+                            <i class="icon-right"></i>
+                        </div>
                         <div class="filter-holder">
                             <form action="#">
-                                <div class="m-filter-data">Filter</div>
+                                <div class="m-filter-data">
+                                    <span>Filtre</span>
+                                    <button class="btn-reload">REINITIALISER</button>
+                                </div>
                                 <div class="m-filter-wrapper">
                                     <div class="filter filter-top">
                                         <div class="nst-component">
@@ -241,106 +248,134 @@
                         <div class="products-grid-holder">
                             <h2 class="h2 decoration">POULET</h2>
                             <ul class="products-list">
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/entier.png" alt="entier">
-                                    </div>
-                                    <span class="item-name">Entier</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/entier.png" alt="entier">
+                                        </div>
+                                        <span class="item-name">Entier</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/filets.png" alt="filets">
-                                    </div>
-                                    <span class="item-name">Filets</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/filets.png" alt="filets">
+                                        </div>
+                                        <span class="item-name">Filets</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/ailes.png" alt="ailes">
-                                    </div>
-                                    <span class="item-name">Ailes</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/ailes.png" alt="ailes">
+                                        </div>
+                                        <span class="item-name">Ailes</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/abats.png" alt="abats">
-                                    </div>
-                                    <span class="item-name">Abats</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/abats.png" alt="abats">
+                                        </div>
+                                        <span class="item-name">Abats</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/co-produit.png" alt="co-produit">
-                                    </div>
-                                    <span class="item-name">Co-produit</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/co-produit.png" alt="co-produit">
+                                        </div>
+                                        <span class="item-name">Co-produit</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/elabores.png" alt="elabores">
-                                    </div>
-                                    <span class="item-name">Elabores</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/elabores.png" alt="elabores">
+                                        </div>
+                                        <span class="item-name">Elabores</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/guisses.png" alt="guisses">
-                                    </div>
-                                    <span class="item-name">Guisses</span>
-                                    <a href="#" class="item-button"></a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/guisses.png" alt="guisses">
+                                        </div>
+                                        <span class="item-name">Guisses</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
                             </ul>
                             <h2 class="h2 decoration">DINDE</h2>
                             <ul class="products-list">
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/entier.png" alt="entier">
-                                    </div>
-                                    <span class="item-name">Entier</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/entier.png" alt="entier">
+                                        </div>
+                                        <span class="item-name">Entier</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/filets.png" alt="filets">
-                                    </div>
-                                    <span class="item-name">Filets</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/filets.png" alt="filets">
+                                        </div>
+                                        <span class="item-name">Filets</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/ailes.png" alt="ailes">
-                                    </div>
-                                    <span class="item-name">Ailes</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/ailes.png" alt="ailes">
+                                        </div>
+                                        <span class="item-name">Ailes</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/abats.png" alt="abats">
-                                    </div>
-                                    <span class="item-name">Abats</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/abats.png" alt="abats">
+                                        </div>
+                                        <span class="item-name">Abats</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a> 
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/co-produit.png" alt="co-produit">
-                                    </div>
-                                    <span class="item-name">Co-produit</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/co-produit.png" alt="co-produit">
+                                        </div>
+                                        <span class="item-name">Co-produit</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/elabores.png" alt="elabores">
-                                    </div>
-                                    <span class="item-name">Elabores</span>
-                                    <a href="#" class="item-button">Favoris</a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/elabores.png" alt="elabores">
+                                        </div>
+                                        <span class="item-name">Elabores</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>       
                                 </li>
-                                <li data-fancybox data-src="#product-popup" href="javascript:;" class="list-item">
-                                    <div class="product-img">
-                                        <img src="assets/images/guisses.png" alt="guisses">
-                                    </div>
-                                    <span class="item-name">Guisses</span>
-                                    <a href="#" class="item-button"></a>   
+                                <li class="list-item">
+                                    <a href="javascript:;" data-fancybox data-src="#product-popup">
+                                        <div class="product-img">
+                                            <img src="assets/images/guisses.png" alt="guisses">
+                                        </div>
+                                        <span class="item-name">Guisses</span>
+                                        <span class="item-button">Favoris</span>
+                                    </a>   
                                 </li>
                             </ul>
                         </div>
