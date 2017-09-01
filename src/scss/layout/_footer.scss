@@ -97,6 +97,14 @@
             display: inline-block;
             margin-bottom: 26px;
             margin-right: 2.7%;
+            &:hover {
+                .btn {
+
+                    border-color: $red;
+                    opacity: 1 !important;
+                    background-color: $red;
+                }
+            }
             @include media('<widescreen') {
                 margin-right: 0;
             }
@@ -230,8 +238,8 @@
                     margin-top: -6px;
                     margin-bottom: 24px;
                     @include media('<tablet') {
-                    	margin-bottom: 19px;
-                    }	
+                        margin-bottom: 19px;
+                    }
                 }
                 @include media('<widescreen') {
                     width: 40%;
@@ -260,22 +268,27 @@
 .subscribe-form {
     margin-left: 3px;
     input {
+        transition: all 0.3s;
         line-height: 1.1;
         font-size: 14px;
         color: $gray-light;
         padding-bottom: 1px;
         background: transparent;
         border: none;
-        border-bottom: 1px solid rgba($white, .8) !important;
+        border-bottom: 1px solid rgba($white, .2) !important;
         width: 180px;
         padding-left: 0 !important;
         font-size: 14px;
         &:focus {
             outline: none;
+                 border-bottom: 1px solid rgba($white, .9) !important; 
+                 & + button {
+                   transform:scale(1.4);
+                 }
         }
     }
     button {
-        @include animate(font-size .1s);
+        @include animate(transform);
         font-size: 33px;
         line-height: 22px;
         background: transparent;
@@ -284,8 +297,9 @@
         vertical-align: bottom;
         margin-left: -1px;
         display: inline-block;
+        transform:scale(1);
         &:hover {
-            font-size: 41px;
+           opacity:     0.8;
         }
     }
 }

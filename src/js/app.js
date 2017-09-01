@@ -11,15 +11,15 @@ import filterjs from './modules/filterjs';
 import markinteractive from './modules/markinteractive';
 import delbtn from './modules/delbtn';
 import popupclose from './modules/popupclose';
+import resizeinput from './modules/resizeinput';
 
 
 (($) => {
     iosDetect();
+    videoBanner();
     menus();
-    videoBox();
     owlSlide();
     parallax();
-    videoBanner();
     scrollreveal();
     smoothscroll();
     callbackjs();
@@ -27,5 +27,8 @@ import popupclose from './modules/popupclose';
     markinteractive();
     delbtn();
     popupclose();
+    videoBox();
+    resizeinput();
+
 })(jQuery);
 

@@ -115,7 +115,6 @@ $light-gray-2:	#eeeeee;
 				margin-bottom: 20px;
 	    	}
 	    	@include media('<phone') {
-				width: 80%;
 				height: 120px;
 				margin-bottom: 10px;
 	    	}
@@ -196,13 +195,11 @@ $light-gray-2:	#eeeeee;
 }
 
 .callback {
-	@include animate(opacity, .3s)
-	display: none;
-	opacity: 0;
+	@include animate(bottom, .3s)
 	max-width: 210px;
 	position: fixed;
 	right: 0;
-	bottom: 0;
+	bottom: -100px;
 	font-size: 15px;
 	color: $white;
 	@include media('<phone') {
@@ -210,8 +207,7 @@ $light-gray-2:	#eeeeee;
     		width: 100%;
 		}
 	&.active {
-		display: block;
-		opacity: 1;
+		bottom: 0;
 	}
 	.red-line {
 		background-color: $red-dark;
@@ -256,6 +252,7 @@ $light-gray-2:	#eeeeee;
     		color: $red;
     		background-color: $white;
     		text-align: center;
+    		cursor: pointer;
 		}
 	}
 }

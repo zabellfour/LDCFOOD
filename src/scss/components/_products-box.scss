@@ -1,8 +1,5 @@
-
 .products-box {
     display: flex;
-
-
     flex-wrap: wrap;
     @include media('<tablet') {
         flex-direction: column-reverse;
@@ -41,6 +38,7 @@
         }
         &:before {
             @include media('<tablet') {
+                @include animate(transform left);
                 content: '';
                 width: 10px;
                 height: 10px;
@@ -117,6 +115,7 @@
         .col-head {
             position: relative;
             width: 20%;
+
             @include media('<tablet') {
                 width: 100%;
             }
@@ -164,7 +163,6 @@
 
             .head-menu {
                 @extend %listreset;
-          
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
@@ -178,13 +176,18 @@
                 background-color: #f6f6f6;
                 z-index: 99;
                 @include media('>tablet') {
-                      @include animate(opacity visibility);
-                  }
+                    @include animate(opacity visibility);
+                    height: auto !important;
+                }
                 @include media('<tablet') {
+                    transition: none !important;
                     position: static;
                     height: 0;
                     background-color: transparent;
                     font-weight: 400;
+                    opacity: 1;
+                    visibility: visible;
+                    overflow: hidden;
                 }
                 li {
                     padding: 9px 5px 9px 33px;
@@ -217,7 +220,7 @@
         }
         .opened .head-menu {
             @include media('<tablet') {
-                height: auto;
+                height: 0;
                 transition: none;
                 opacity: 1;
                 visibility: visible;
@@ -227,7 +230,6 @@
     .box-row-wrapper {
         overflow: hidden;
         width: 100%;
-
         &.opened {
             @include media('<tablet') {
                 .box-row {
@@ -235,12 +237,17 @@
                     visibility: visible;
                     transform: translateY(0%);
                     position: relative;
-                    height: auto;
+                    height: 585px;
+                    z-index: 1;
                 }
             }
         }
         .opener {
             display: none;
+                position: relative; z-index:    10;
+                .box-row{
+                    z-index:    9;
+                }
             @include media('<tablet') {
                 display: block;
             }
@@ -257,11 +264,15 @@
         align-items: flex-start;
         justify-content: flex-start;
         @include media('<tablet') {
-            @include animate(opacity visibility transform);
+            overflow: hidden;
+            z-index: -1;
+            @include animate(all 0.15s);
             opacity: 0;
             visibility: hidden;
-            height: 0;
+            position: relative;
             display: block;
+            height: 0;
+            transform: translateY(-100%);
         }
     }
     .col-body {
@@ -270,13 +281,13 @@
         @include media('<tablet') {
             width: 100%;
         }
-
-
         .body-box {
+            display: block;
             text-align: center;
             background-color: transparent;
             padding: 40px 13px 37px;
             position: relative;
+            color: inherit;
             @include media('<desktop') {
                 padding: 5px 8px;
             }
@@ -318,6 +329,22 @@
                     i {
                         color: $white;
                         font-size: 88px;
+                    }
+                    .btn {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                @include media('>tablet', '<desktop') {
+                    background-color: $red;
+                    color: $white;
+                    padding: 5px 8px;
+                    &:after {
+                        opacity: 0;
+                    }
+                    i {
+                        color: $white;
+                        font-size: 50px;
                     }
                     .btn {
                         opacity: 1;

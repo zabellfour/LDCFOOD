@@ -144,8 +144,40 @@
             @include media('<desktop') {
                 padding: 4px;
             }
-            &:hover {
-                color: $red;
+            &:not(.btn-contact) {
+                &:after {
+                    @include animate(right opacity width);
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 13px;
+                    right: calc(100% - 13px);
+                    width: auto;
+                    height: 4px;
+                    background-color: $red;
+                    opacity: 0;
+                    @include media('<desktop') {
+                        left: 5px;
+                        right:calc(100% - 5px);
+                    }
+                    @include media('<tablet') {
+                        height: 3px;    
+                        width: 0;   
+                    }    
+                }
+                &:hover:after {
+                    width: auto;
+                    right: 13px;
+                    opacity:    1;
+                    @include media('<desktop') {
+                        
+                        right: 5px;
+                    }
+                    @include media('<tablet') {
+                        right:auto;
+                        width:  170px;  
+                    }    
+                }
             }
         }
         li {
@@ -155,19 +187,7 @@
             }
             &.current-menu-item {
                 a {
-                    &:after {
-                        content: '';
-                        position: absolute;
-                        bottom: -2px;
-                        left: 13px;
-                        right: 13px;
-                        height: 4px;
-                        background-color: $red;
-                        @include media('<desktop') {
-                            left: 5px;
-                            right: 5px;
-                        }
-                    }
+                    color: $red;
                 }
             }
             @include media('<desktop') {
@@ -175,6 +195,7 @@
             }
             @include media('<tablet') {
                 padding: 0 6px 29px;
+
             }
 
             &:last-of-type {
@@ -187,6 +208,7 @@
                 }
             }
             .btn-contact {
+
                 @include media('<tablet') {
                     padding: 8px 22px;
                     margin-left: -9px;
@@ -314,18 +336,25 @@
 }
 
 .menu-close {
+    @include animate(opacity); 
+
     position: absolute;
     right: 8px;
     top: 5px;
     color: $white;
-
+    cursor:pointer;
     display: none;
     z-index: 10;
     line-height: 1;
     top: -1px;
     font-size: 34px;
+    padding-bottom: 0 !important    ;  
+    &:hover{
+        opacity:    .75;
+    }
     @include media('<tablet') {
         display: block;
+        opacity:    1;
     }
 }
 

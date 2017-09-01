@@ -19,19 +19,32 @@ var videoBanner = function() {
             }
         }
     }, 500);
+    
     $(window).resize(function() {
-        if ($('.video-banner').length) {
+        if ($('.video-banner  video').length) {
             if ($(window).width() < 1024) {
                 $('.video-banner video')[0].pause();
             }
         }
     });
-    $(".fancybox-close-small").click(function() {
-        $(".fancybox-inner video").click();
+
+
+    $(document).on('afterShow.fb', function() {
+        if ($('.fancybox-slide video').length) {
+            $('.fancybox-slide video')[0].play();
+        }
+
+
     });
 
-    $(document).on('afterShow.fb', function(e, instance, slide) {
-        $('.fancybox-slide video')[0].play();
+    $("[data-fancybox]").fancybox({
+        beforeClose: function(instance, current, e) {
+
+            if ($('.fancybox-slide video').length) {
+                $('.fancybox-slide video')[0].pause();
+            }
+
+        }
     });
 
 };
