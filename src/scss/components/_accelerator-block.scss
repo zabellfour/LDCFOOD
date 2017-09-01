@@ -24,8 +24,9 @@
 			padding: 15px 0;
 		}
 		@media screen and (max-width: 550px) {
-          	width: 50%;
+          	width: 100%;
           	padding: 10px 0;
+          	border-bottom: 1px solid $gray-light;
         }
 		a {
 			@include animate(color, .3s);
@@ -40,8 +41,8 @@
 			@include media('<desktop') {
 				font-size: 15px;
 			}
-			@include media('<tablet') {
-				font-size: 12px;
+			@media screen and (max-width: 550px) {
+				text-align: left;
 			}
 			&:after {
 				@include animate(background-color, .3s);
@@ -53,7 +54,7 @@
 				height: 6px;
 				background-color: $white;
 				@include media('<tablet') {
-					bottom: -19px;
+					display: none;
 					}
 				}
 			&:hover {

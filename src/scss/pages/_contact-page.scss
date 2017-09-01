@@ -197,11 +197,10 @@
 	color: $white;
 	margin-bottom: 10px !important;
 	.favoris-option{
-		display: inline-block;
-		max-width: 200px;
-		text-overflow: ellipsis;
-		overflow: hidden;
+		min-width: 50px;
+		max-width: 500px;
 		font-size: 16px;
+		padding: 0 10px 0 0;
 		background: transparent;
 		border: 0;
 		border-radius: 0;
@@ -322,6 +321,7 @@
 		font-size: 19px;
 	}
 	.btn-close {
+		@include animate(opacity, .3s);
 		display: inline-block;
 		width: 100%;
 		max-width: 318px;
@@ -332,5 +332,8 @@
 		font-size: 22px;
 		line-height: 56px;
 		cursor: pointer;
+		&:hover {
+			opacity: .8;
+		}
 	}
 }
