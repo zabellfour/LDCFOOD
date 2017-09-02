@@ -31,8 +31,7 @@
 		}
 	}
 	.search-form {
-		display: block;
-		text-align: center;
+		justify-content: center;
 		margin-bottom: 113px;
 		@include media('<desktop') {
 			margin-bottom: 80px;

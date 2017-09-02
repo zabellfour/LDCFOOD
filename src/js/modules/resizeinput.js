@@ -19,7 +19,6 @@ var resizeinput = function() {
 
     function inputWidth(elem, minW, maxW) {
         elem = $(this);
-        console.log(elem);
     }
 
     var targetElem = $('.width-dynamic');
