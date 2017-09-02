@@ -35,7 +35,7 @@
     	font-size: 18px;	
     }	
     .title {
-        font-size: imherit;
+        font-size: inherit;
         font-weight: 300;
         display: inline-block;
         margin-bottom: 21px;
@@ -72,7 +72,7 @@
     }
     img {
         @include animate(transform);
-        transform:scale;
+     
         width: auto !important;
         display: inline-block;
         max-height: 100%;
