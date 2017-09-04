@@ -1,6 +1,7 @@
 .mark-interactive {
 	padding: 55px;
 	background-color: $black;
+	background-repeat: no-repeat;
 	color: $white;
 	@include media('<desktop') {
 		padding: 30px;
