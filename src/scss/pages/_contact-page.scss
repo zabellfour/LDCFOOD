@@ -210,10 +210,15 @@
 		@include media('<desktop') {
 			font-size: 14px;
 		}
+		@include media('<phone') {
+			max-width: 240px;
+			text-overflow: ellipsis;
+		}
 	}
 	.del-btn {
 		@include animate(opacity, .3s)
 		display: inline-block;
+		margin-right: 10px;
 		width: 20px;
 		height: 20px;
 		top: 4px;
